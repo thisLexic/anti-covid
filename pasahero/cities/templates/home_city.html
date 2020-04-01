@@ -7,17 +7,17 @@
 		If you have an announcement for your commuters, contact your admin.
 	</h2>
 {% elif status == 'maj' %}
-	<h6>Announcement to commuters:</h6>
+	<h1>Announcement to {{ city.name }} commuters:</h1>
 	<h2>
 		{{ city.major_announcement }}
 	</h2>
 {% elif status == 'min' %}
-	<h6>Announcement to commuters:</h6>
+	<h1>Announcement to {{ city.name }} commuters:</h1>
 	<h4>
 		{{ city.minor_announcement }}
 	</h4>
 {% else %}
-	<h6>Announcement to commuters:</h6>
+	<h1>Announcement to {{ city.name }} commuters:</h1>
 	<h2>
 		{{ city.major_announcement }}
 	</h2>

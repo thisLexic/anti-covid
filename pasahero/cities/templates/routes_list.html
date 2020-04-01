@@ -2,12 +2,14 @@
 
 {% block body %}
 {% if routes %}
-<h3>Select a route to delete</h3>
-<h6>
-	If you plan on reactivating this route at some point in time, just deactivate the route. Do not delete it. <br>
-	Deleting a route will also delete its time slots.
-</h6>
-
+<h1 style="color:red;">Warning!</h1>
+<br><br>
+<h3>
+	If you plan on reactivating this route at some point in time, just deactivate the route.  <br>
+	Do not delete it because once a route has been deleted, it will be <b style="color:red;">permanently deleted</b>.  <br>
+	Deleting a route will also delete all data associated with it. <br>
+</h3>
+<br><br><br><br>
 <table class="table table-striped">
   <thead>
     <tr>
