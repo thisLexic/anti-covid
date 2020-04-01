@@ -26,6 +26,10 @@
         <a class="navbar-brand orange" href="{% url 'cities:home_page' %}">
           Announcements
         </a>
+        <a class="navbar-brand orange" href='#' %}>
+          {{user.username}}
+        </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -54,6 +58,10 @@
         <a class="navbar-brand orange" href="{% url 'employees:home_page' %}">
           pasaHERO
         </a>
+        <a class="navbar-brand orange" href='#' %}>
+          {{user.username}}
+        </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -81,6 +89,9 @@
         <a class="navbar-brand orange" href="{% url 'commuters:announcements' %}">
           pasaHERO
         </a> 
+        <a class="navbar-brand orange" href='#' %}>
+          {{user.username}}
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
