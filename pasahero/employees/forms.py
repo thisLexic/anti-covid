@@ -13,6 +13,12 @@ class CreateRouteForm(forms.ModelForm):
     class Meta:
         model = Routes
         fields = ('name', 'via', 'point_a', 'point_b')
+        help_texts = {
+            "name":"Ex: Quezon City Circle - Araneta Avenue",
+            "via":"Ex: Quezon Avenue",
+            "point_a":"Ex: Quezon City Circle",
+            "point_b":"Ex: Araneta Avenue",
+        }
 
 class CreateDirectionForm(forms.ModelForm):
     class Meta:

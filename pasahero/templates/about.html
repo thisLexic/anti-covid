@@ -5,51 +5,57 @@ About Page
 {% endblock %}
 
 {% block body %}
-This site attempts to solve an integral problem in the current state of the Philippine quarantine. Due to the nature of the covid quarantine in our country, cities and minicipalities have their own way of implementing the quarantine. Some cities are more lenient than others but other cities and municipalities make it very difficult for people to go in or out of their respective locations.
-<br><br>
-Now, this is a huge problem for the work force of the Philippines: nurses, doctors, cashiers, technicians, security guards, janitors, etc. 
-<br><br>
-Some workers do not live in the city where their place of work is. Even those that live in the city where their place of work is, it is still hard because public transportation is gone for the most part. This makes transportation for the work force hard.
-<br><br>
-Since the work force cannot go to their place of work, businesses are understaffed. This means that the general public will have a hard time buying necessary goods and services.
-<br><br>
-Basically, the problem is that workers need a way to go from their residence to their place of work without being stopped by checkpoints, lack of transportation, and other hurdles.
-<br><br>
-With the problem made clear, this website provides itself as a possible solution. Commuters can sign up and upload necessary documents that verify their identity and place of work. Afterwards, they can apply for routes that are determined by the city they are applying in.
-<br><br>
-After applying, city hall employees can choose to approve or disapprove their application based on the documents they provided.
-<br><br>
-Currently supported features of the application:
-<br>
-For Commuters: <br>
-1) logging in, logging out, and signing up <br>
-2) uploading, editing, viewing, and deleting their documents <br>
-3) viewing all routes of a city with each route's details such as starting point, end point, times, etc. <br>
-4) can apply for any route and see the status of their application <br>
-5) view announcements made by the cities they have applied for <br>
-6) edit information about self (ex: contact information) <br>
-7) create and edit preferred time of leaving per route <br>
-<br>
-For city employees: <br>
-1) view announcements for their commuters<br>
-2) activate/inactivate routes (which employee made the change is visible)<br>
-3) create routes (which employee made the change is visible)<br>
-4) set and edit route trips and times (which employee made the changes is visible)<br>
-5) approve, reject and return to pending the application of commuters (which employee made the decision is visible)<br>
-6) view all commuter information and all their documents <br>
-7) view preferred times of all commuters for any given route (tabulated) <br>
-<br>
-For city admins (an employee that is in charge of all the other employees):<br>
-1) create and update announcements for the city	<br>
-2) delete routes <br>
-3) create, inactivate, reactivate employees 
-<br>
-<br>
-<br>
-More stuff you can put:<br>
-This is to help the commuters commute more effectively. <br>
-This is to help the cities manage the outbreak better. <br>
-This is to help the drivers have more job opportunities. <br>
-This is to help the police in checkpoints to check better. <br>
-This is to help the Filipino people deal with this pandemic better.
+<h1>About</h1><br>
+<div class='container'>
+	<p align="justify">
+		This site attempts to solve an integral problem in the current state of the Philippine quarantine. Due to the nature of the covid quarantine in our country, cities and minicipalities have their own way of implementing the quarantine. Some cities are more lenient than others but other cities and municipalities make it very difficult for people to go in or out of their respective locations.
+	</p>
+	<p align="justify">
+		Now, this is a huge problem for the work force of the Philippines: nurses, doctors, cashiers, technicians, security guards, janitors, etc.
+		Some workers do not live in the city where their place of work is. Even those that live in the city where their place of work is, it is still hard because public transportation is gone for the most part. This makes transportation for the work force hard.
+	</p>
+	<p align="justify">
+		Since the work force cannot go to their place of work, businesses are understaffed. This means that the general public will have a hard time buying necessary goods and services.
+	</p>
+	<p align="justify">
+		Basically, the problem is that workers need a way to go from their residence to their place of work without being stopped by checkpoints, lack of transportation, and other hurdles.
+	</p>
+	<p align="justify">
+	With the problem made clear, this website provides itself as a possible solution. Commuters can sign up and upload necessary documents that verify their identity and place of work. Afterwards, they can apply for routes that are determined by the city they are applying in.
+	</p>
+	<p align="justify">
+	After applying, city hall employees can choose to approve or disapprove their application based on the documents they provided.
+	</p>
+	<br><br>
+	<h4 align="justify">
+		Supported features:
+	</h4>
+	<div class="container">
+		<p align="justify">
+		For Commuters: <br>
+		1) signing up, logging in, and logging out <br>
+		2) uploading, editing, viewing, and deleting their documents <br>
+		3) viewing all routes of a city with each route's details such as starting point, end point, times, etc. <br>
+		4) can apply for any route and see the status of their application <br>
+		5) view announcements made by the cities they have applied for <br>
+		6) edit information about self (ex: contact information) <br>
+		7) create and edit preferred time of departure per route (as basis for transportation capacity and availability in a city)<br>
+		</p>
+		<p align="justify">
+		For city employees: <br>
+		1) view announcements for their commuters<br>
+		2) activate/inactivate routes (which employee made the changes is only visible to employees)<br>
+		3) create routes (which employee made the change is visible)<br>
+		4) set and edit the route and time availability of a transport (which employee made the changes is only visible to employees)<br>
+		5) approve, reject and return to pending the application of commuters (which employee made the changes is only visible to employees)<br>
+		6) view all commuter information and all their documents <br>
+		7) view preferred times of all commuters for any given route (tabulated as basis for transportation capacity and availability planning and management) <br>
+		</p>
+		<p align="justify">
+		For city admins (an employee that is in charge of all the other employees):<br>
+		1) create and update announcements for the city	<br>
+		2) delete routes <br>
+		3) create, inactivate, reactivate employees
+	</div> 
+</div>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.utils import timezone
 from django.urls import reverse_lazy
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render, redirect
@@ -147,7 +148,7 @@ class AnnouncementsList(CommuterRequiredMixin, ListView):
         except:
             return Commuters.objects.none()
         cities = []
-        for ar in commuter.allowed_routes.select_related('route_id__city_id').iterator():
+        for ar in commuter.allowed_routes.filter(Q(status="A") | Q(status="P")).select_related('route_id__city_id').iterator():
             city = ar.route_id.city_id
             if city in cities:
                 continue

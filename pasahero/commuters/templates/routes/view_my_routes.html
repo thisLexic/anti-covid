@@ -55,8 +55,6 @@ My Routes
 			{% endif %}
 		{% else %}
 			<h4>You are not permitted to take public transportation as of the moment. <br>Upload the necessary documents through the website and choose routes so that the City Halls can consider your request.</h4>
-			* If you have already did these steps, try contacting the City Hall of the respective location. To view their contact detials, <a href="{% url 'transportations:view_cities' %}">click here</a>.<br>
-			* If the route you applied for is currenly inactive, it will not be displayed
 		{% endif %}
 	</div>
 {% endblock %}

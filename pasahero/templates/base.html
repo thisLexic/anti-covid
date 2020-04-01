@@ -52,7 +52,7 @@
     {% elif user.groups.all.0.name == "employee" %}
       <div class="container">
         <a class="navbar-brand orange" href="{% url 'employees:home_page' %}">
-          Home
+          pasaHERO
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -79,7 +79,7 @@
       </div>
     {% elif user.groups.all.0.name == "commuter" %}
         <a class="navbar-brand orange" href="{% url 'commuters:announcements' %}">
-          Announcements
+          pasaHERO
         </a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -91,7 +91,7 @@
               My Routes
             </a>
             <a class="nav-item nav-link active" href="{% url 'commuters:apply_city' %}">
-              All Routes
+              Apply Routes
             </a>
             <a class="nav-item nav-link active" href="{% url 'documents:read' %}">     
               Documents
@@ -109,7 +109,7 @@
         </div>
     {% else %}
       <a class="navbar-brand orange" href="{% url 'home' %}">
-        Home
+        pasaHERO
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -118,7 +118,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active" href="{% url 'transportations:view_cities' %}">
-            All Routes
+            Routes
           </a>
           <a class="nav-item nav-link active" href="{% url 'about' %}">     
             About

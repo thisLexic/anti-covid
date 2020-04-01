@@ -5,22 +5,32 @@
 {% endblock %}
 
 {% block body %}
-{% if city.major_is_active %}
-	<h2>{{city.major_announcement}}</h2>
+<h1>{{ city.name }}</h1>
+<br>
+{% if city.major_is_active or city.minor_is_active %}
+	<h3>Announcements:</h3>
 {% endif %}
-{% if city.minor_is_active %}
-	<h4>{{city.minor_announcement}}</h4>
-{% endif %}
+<div class='container'>
+	{% if city.major_is_active %}
+		<h3>{{city.major_announcement}}</h3>
+	{% endif %}
+	{% if city.minor_is_active %}
+		<h5>{{city.minor_announcement}}</h5>
+	{% endif %}
+</div>
 <br>
 {% if routes %}
-{% for r in routes %}
-	<a href="{% url 'commuters:apply_route' pk=r.id %}">
-		<button type="button" class="btn btn-primary">
-			{{r.name}}
-		</button>
-	</a>
-	<br><br>
-{% endfor %}
+<h3>Available Routes:</h3>
+<div class="container">
+	{% for r in routes %}
+		<a href="{% url 'commuters:apply_route' pk=r.id %}">
+			<button type="button" class="btn btn-primary">
+				{{r.name}}
+			</button>
+		</a>
+		<br><br>
+	{% endfor %}
+</div>
 {% else %}
 <h3>As of the momement, this city has not created any routes.</h3>
 {% endif %}

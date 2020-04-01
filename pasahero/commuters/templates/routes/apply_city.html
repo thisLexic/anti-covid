@@ -5,7 +5,8 @@ My Routes
 {% endblock %}
 
 {% block body %}
-<h2>Choose a city you want to apply for:</h2>
+<h2>Choose a city to display its available routes</h2>
+<h4>Afterwards, you can choose a route to apply for</h4>
 <div class="jumbotron">
 	<form id="personForm" 
 	action="{% url 'commuters:apply_city' %}" 
