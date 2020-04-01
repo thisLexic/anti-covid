@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Routes
+{% endblock %}
+
+{% block body %}
+<h2>You have logged in as {{commuter.first_name}} {{commuter.last_name}}</h2>
+<h3>My Routes</h3><br>
+	<div class='container'>
+		{% if routes %}
+			{% for route in routes %}
+				<a href="{% url 'transportations:view_directions' pk=route.id %}">
+					<button type="button" class="btn btn-primary">
+						{{route.name}}
+					</button>
+				</a>
+				<br><br>
+			{% endfor %}
+		{% else %}
+			<h4>You are not permitted to take public transportation as of the moment. <br>Upload the necessary documents through the website and choose routes so that the City Halls can consider your request.</h4>
+		{% endif %}
+		* If you have already did these steps, try contacting the City Hall of the respective location. To view their contact detials, <a href="{% url 'transportations:view_cities' %}">click here</a>.<br><br>
+	</div>
+<h3>To view all available routes in a city, click the button below:</h3>
+<div class='container'>
+	<a href="{% url 'transportations:view_cities' %}">
+		<button type="button" class="btn btn-success">
+			Routes
+		</button>
+	</a>
+</div>
+<br>
+<h3>To edit personal information about yourself, click the button below:</h3>
+<div class='container'>
+	<a href="{% url 'commuters:edit_commuter' pk=commuter.id%}">
+		<button type="button" class="btn btn-success">
+			Edit
+		</button>
+	</a>
+</div>
+{% endblock %}

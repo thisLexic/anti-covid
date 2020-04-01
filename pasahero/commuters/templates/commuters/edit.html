@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+Submit Info
+{% endblock %}
+
+{% block body %}
+Edit your personal info here.<br>
+If you wish to edit something about yourself but it is not in this page, please make a new account instead.<br>
+The website developers apologise for the inconvenience but this was done to strengthen the security of the website. <br><br>
+<div class="jumbotron">
+	<form id="personForm" 
+    action="{% url 'commuters:edit_commuter' pk=user.id %}"
+    method="POST">
+    {% csrf_token %}
+    <h4>How will you be contacted?</h4>
+    <p>* This will be used by cities you apply routes for so that you can be allowed to ride public transportation</p>
+      <table>
+        <tr>
+          <td>{{ form.cell_number.label_tag }}</td>
+          <td>{{ form.cell_number }} </td>
+        </tr>
+        <tr>
+          <td>{{ form.tele_number.label_tag }}</td>
+          <td>{{ form.tele_number }} </td>
+        </tr>
+        <tr>
+          <td>{{ form.email.label_tag }}</td>
+          <td>{{ form.email }} </td>
+        </tr>
+      </table>
+      <br>
+    <h4>Where would you like to be picked up?</h4>
+    <p>* Kindly provide a location that is known by most people so that the City Hall can understand where it is.</p>
+    <p>* Please understand that this does not ensure that a jeep, bus, or any other vehicle will pass by your provided location. However, it helps the City Hall in determining the best routes for the city.</p>
+      <table>
+        <tr>
+          <td>{{ form.preferred_pick_up.label_tag }}</td>
+          <td>{{ form.preferred_pick_up }} </td>
+        </tr>
+      </table>
+      <br>
+    <h4>Is there anything you want your city to know that may affect your ability to go to work?</h4>
+    <p>* Ex: Knees are weak and ache when walking for too long, Alone at home with child, No access to private vehicles, etc.</p>
+      <table>
+        <tr>
+          <td>{{ form.comments.label_tag }}</td>
+          <td>{{ form.comments }} </td>
+        </tr>
+      </table>
+      <br>
+	    <button type="submit" class="btn btn-danger">Save Changes</button>
+      <br><br>
+	</form>
+  <a href="{% url 'commuters:view_my_routes' %}"><button class="btn btn-primary">Go Back</button></a>
+</div>
+{% endblock %}

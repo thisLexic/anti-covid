@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="{% url 'employees:add_times' dir_pk=dir_pk %}" method="post">
+	{% csrf_token %}
+	{{ form.management_form }} 
+	<h3>You can add 1 to 5 time slots at a time</h3>
+	<br>
+	{% for f in form %}
+		<hr class='style13'>
+		{{ f.as_p }}
+		<br>
+	{% endfor %}
+	<button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Permitted Routes
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+	<form
+    action="{% url 'employees:edit_directions' route_pk=route_pk dir_pk=dir_pk %}"
+    method="POST">
+    {% csrf_token %}
+    {{ form_direction.as_p }}
+	<button type="submit" class="btn btn-primary">Edit</button>
+	</form>
+	<br><br><br><br><br>
+</div>
+<a href="{% url 'employees:delete_direction' route_pk=route_pk dir_pk=dir_pk %}">
+	<button type="button" class="btn btn-danger">
+		Delete
+	</button>
+</a>
+{% endblock %}

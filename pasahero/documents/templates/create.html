@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+Permitted Routes
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+	<h3>Only PDF and image files are supported at the moment</h3>
+	<form id="personForm" 
+	enctype= "multipart/form-data"
+    action="{% url 'documents:create' %}"
+    method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+	<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ city }} 
+{% endblock %}
+
+{% block body %}
+{% if city.major_is_active %}
+	<h2>{{city.major_announcement}}</h2>
+{% endif %}
+{% if city.minor_is_active %}
+	<h4>{{city.minor_announcement}}</h4>
+{% endif %}
+<br>
+{% if routes %}
+{% for r in routes %}
+	<a href="{% url 'transportations:view_directions' pk=r.id %}">
+		<button type="button" class="btn btn-primary">
+			{{r.name}}
+		</button>
+	</a>
+	<br><br>
+{% endfor %}
+{% else %}
+<h3>As of the momement, this city has not created any routes.</h3>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Permitted Routes
+{% endblock %}
+
+{% block body %}
+<br>
+View All Your Documents Here
+<br><br>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+  	<tbody>
+  			{% for d in documents %}
+		    <tr>
+		    	<td>
+					 <a href="{% url 'documents:detail' pk=d.id %}">
+						<button type="button" class="btn btn-primary">
+			      			{{ d.title }}
+						</button>
+					</a>
+				</td>
+		      <td>{{ d.description }}</td>
+		    </tr>
+			{% endfor %}
+  	</tbody>
+</table>
+<br><br>
+To add more Documents, click below:<br>
+<a href="{% url 'documents:create' %}">
+	<button type="button" class="btn btn-primary">
+		Upload
+	</button>
+</a>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='A' pk_ar=allowed_route.id pk_route=route.id %}">
+	<button type="button" class="btn btn-success">
+		Allow
+	</button>
+</a>
+<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='P' pk_ar=allowed_route.id pk_route=route.id %}">
+	<button type="button" class="btn btn-warning">
+		Undecided
+	</button>
+</a>
+<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='R' pk_ar=allowed_route.id pk_route=route.id %}">
+	<button type="button" class="btn btn-danger">
+		Reject
+	</button>
+</a>
+<br><br>
+<h6>Decision made by {{allowed_route.employee_id.first_name }} {{allowed_route.employee_id.last_name }}</h6>
+<br>
+
+<h3>Primary Information:</h3>
+<table class="table table-striped">
+  	<tbody>
+	    <tr>
+	      <td>First Name</td>
+	      <td>{{ commuter.first_name }}</td>
+	    </tr>
+	    <tr>
+	      <td>Last Name</td>
+	      <td>{{ commuter.last_name }}</td>
+	    </tr>
+	    <tr>
+	      <td>Middle Name</td>
+	      <td>{{ commuter.middle_name }}</td>
+	    </tr>
+	    <tr>
+	      <td>Job</td>
+	      <td>{{ commuter.profession }}</td>
+	    </tr>
+	    <tr>
+	      <td>Company</td>
+	      <td>{{ commuter.company_name }}</td>
+	    </tr>
+	    <tr>
+	      <td>Company Address</td>
+	      <td>{{ commuter.company_location }}</td>
+	    </tr>
+	    <tr>
+	      <td>Company City</td>
+	      <td>{{ commuter.works_city_id.name }}</td>
+	    </tr>
+  	</tbody>
+</table>
+<br>
+
+<h3>Pertinent Travel Information:</h3>
+<table class="table table-striped">
+  	<tbody>
+	    <tr>
+	      <td>City</td>
+	      <td>{{ commuter.lives_city_id }}</td>
+	    </tr>
+	    <tr>
+	      <td>Present Address</td>
+	      <td>{{ commuter.present_address }}</td>
+	    </tr>
+	    <tr>
+	      <td>Permanent Address</td>
+	      <td>{{ commuter.permanent_address }}</td>
+	    </tr>
+	    <tr>
+	      <td>Preferred Pickup</td>
+	      <td>{{ commuter.preferred_pick_up }}</td>
+	    </tr>
+	    <tr>
+	      <td>Other Details</td>
+	      <td>{{ commuter.comments }}</td>
+	    </tr>
+  	</tbody>
+</table>
+<br>
+<h3>Contact Information:</h3>
+<table class="table table-striped">
+  	<tbody>
+	    <tr>
+	      <td>Phone Number</td>
+	      <td>{{ commuter.cell_number }}</td>
+	    </tr>
+	    <tr>
+	      <td>Telephone Number</td>
+	      <td>{{ commuter.tele_number }}</td>
+	    </tr>
+	    <tr>
+	      <td>Email</td>
+	      <td>{{ commuter.email }}</td>
+	    </tr>
+  	</tbody>
+</table>
+<br>
+<h3>Documents:</h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+  	<tbody>
+  		{% for d in commuter.documents.all %}
+		    <tr>
+		    	<td>
+					 <a href="{% url 'employees:commuter_document' doc_pk=d.id route_pk=route.id %}">
+						<button type="button" class="btn btn-primary">
+			      			{{ d.title }}
+						</button>
+					</a>
+				</td>
+		      <td>{{ d.description }}</td>
+		{% endfor %}
+		    </tr>
+  	</tbody>
+</table>
+{% endblock %}

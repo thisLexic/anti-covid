@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if routes %}
+	<h2>Inactive Routes</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Allowed</th>
+      <th scope="col">Pending</th>
+      <th scope="col">Rejected</th>
+      <th scope="col">Preferred Times</th>
+    </tr>
+  </thead>
+  <tbody>
+		{% for r in routes %}
+			<tr>
+				<td>
+					<a href="{% url 'employees:details_route' pk=r.id %}">
+						<button type="button" class="btn btn-primary">
+							{{r.name}}
+						</button>
+					</a>
+				</td>
+				<td>
+					 <span style="white-space: nowrap; color:green;">
+					 	<h5>{{ r.allowed }}</h5>
+					 </span>
+				</td>
+				<td>
+					 <span style="white-space: nowrap; color:black;">
+					 	<h5>{{ r.pending }}</h5>
+					 </span>
+				</td>
+				<td>					
+					 <span style="white-space: nowrap; color:red;">
+					 	<h5>{{ r.rejected }}</h5>
+					 </span>
+				</td>
+				<td>
+					<a href="{% url 'employees:employee_preferred_time' pk=r.id flip='t' %}">
+						<button type="button" class="btn btn-secondary">
+							View
+						</button>
+					</a>
+				</td>
+		    </tr>
+		{% endfor %}
+  </tbody>
+</table>
+{% else %}
+	<h1>
+		All routes are currently active
+	</h1>
+{% endif %}
+{% endblock %}

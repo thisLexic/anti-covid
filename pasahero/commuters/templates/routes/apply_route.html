@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+Route
+{% endblock %}
+
+{% block body %}
+<h2>{{route.name}}</h2>
+{% if not allowed_route %}
+	<a href="{% url 'commuters:apply_route_action' pk=route.id %}">
+		<button type="button" class="btn btn-primary">
+			Apply
+		</button>
+	</a><br><br>
+{% elif allowed_route.status == "A" %}
+You are permitted to use this route
+
+{% elif allowed_route.status == "P" %}
+Your request for this route is pending
+
+{% elif allowed_route.status == "R" %}
+The city is not allowing you to use this route
+{% endif %}
+<br>
+{% if directions %}
+Available Times:
+<br><br>
+<div class='container'>
+	{% for datum in directions %}
+		Starting Point: {{ datum.start_location }}<br>
+		End Point: {{ datum.end_location }}<br>
+		Time:	
+			{% if datum.times %}
+				{% for t in datum.ordered_times %}
+					{{ t }}, 
+				{% endfor %}
+			{% else %}
+				Not Available
+			{% endif %}
+		<br><br>
+	{% endfor %}
+{% else %}
+	<h3>No trips as of the moment</h3>
+	<p>* Can still apply for the route in case trips are created</p>
+</div>
+<br>
+{% endif %}
+{% endblock %}

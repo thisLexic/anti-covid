@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if routes %}
+<h3>Select a route to delete</h3>
+<h6>
+	If you plan on reactivating this route at some point in time, just deactivate the route. Do not delete it. <br>
+	Deleting a route will also delete its time slots.
+</h6>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Allowed</th>
+      <th scope="col">Pending</th>
+      <th scope="col">Rejected</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+		{% for r in routes %}
+			<tr>
+				<td>
+					{{r.name}}		
+				</td>
+				<td>
+					 <span style="white-space: nowrap; color:green;">
+					 	<h5>{{ r.allowed }}</h5>
+					 </span>
+				</td>
+				<td>
+					 <span style="white-space: nowrap; color:black;">
+					 	<h5>{{ r.pending }}</h5>
+					 </span>
+				</td>
+				<td>					
+					 <span style="white-space: nowrap; color:red;">
+					 	<h5>{{ r.rejected }}</h5>
+					 </span>
+				</td>
+				<td>
+					<a href="{% url 'cities:delete_route' pk=r.id %}">
+						<button type="button" class="btn btn-danger">
+							Delete
+						</button>
+					</a>
+				</td>
+		    </tr>
+		{% endfor %}
+  </tbody>
+</table>
+{% else %}
+	<h2>
+		Your city currently has no routes. <br>
+		Kindly add some as an employee. <br>
+		Login as an employee please!
+	</h2>
+{% endif %}
+{% endblock %}

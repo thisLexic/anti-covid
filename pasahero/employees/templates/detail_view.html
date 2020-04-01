@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>{{ route.name }}</h1>
+<h4>Via: {{ route.via }}</h4>
+<h6>Last Edited By: {{ route.employee_id.first_name }} {{ route.employee_id.last_name }}</h6>
+<br>
+<h5>Commuters:</h5>
+<div class="container">
+	<a href="{% url 'employees:commuters_list' pk=route.id status='a' %}">
+		<button type="button" class="btn btn-success">
+			Accepted
+		</button>
+	</a>
+	<a href="{% url 'employees:commuters_list' pk=route.id status='p' %}">
+		<button type="button" class="btn btn-warning">
+			Pending
+		</button>
+	</a>
+	<a href="{% url 'employees:commuters_list' pk=route.id status='r' %}">
+		<button type="button" class="btn btn-danger">
+			Rejected
+		</button>
+	</a>
+</div>
+<br>
+<h5>Destinations and Times:</h5>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Starting Point</th>
+      <th scope="col">End Point</th>
+      <th scope="col">Vehicle</th>
+      <th scope="col">Duration (minutes)</th>
+      <th scope="col">Times and Capacity</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for d in route.directions.all %}
+	    <tr>
+	      <td>{{ d.start_location }}</td>
+	      <td>{{ d.end_location }}</td>
+	      <td>{{ d.vehicle }}</td>
+	      <td>{{ d.duration_minutes }}</td>
+	      <td>
+		     <table class="table table-dark">
+			    {% for t in d.times.all %}
+		       		<tr>
+				        <td>{{t.time}}</td>
+				        <td>{{t.capacity}}</td>
+		    		</tr>
+			    {% endfor %}				  
+			      <tr>
+			      	<td>
+						<a href="{% url 'employees:add_times' dir_pk=d.id %}">
+							<button type="button" class="btn btn-primary">
+								Add
+							</button>
+						</a>	      	
+					</td>
+			      	<td>
+						<a href="{% url 'employees:list_times' dir_pk=d.id %}">
+							<button type="button" class="btn btn-danger">
+								Delete
+							</button>
+						</a>	      	
+					</td>
+			      </tr>
+		     </table>
+	      </td>
+	      <td>
+			<a href="{% url 'employees:edit_directions' route_pk=route.id dir_pk=d.id %}">
+				<button type="button" class="btn btn-secondary">
+					Edit
+				</button>
+			</a>
+	      </td>
+	    </tr>
+	{% endfor %}
+	    <tr>
+	      <td>
+			<a href="{% url 'employees:add_directions' pk=route.id %}">
+				<button type="button" class="btn btn-primary">
+					Add
+				</button>
+			</a>	      	
+	      </td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+{% if route.is_active %}
+<a href="{% url 'employees:change_status_route' pk=route.id %}">
+	<button type="button" class="btn btn-danger">
+		Deactivate Route
+	</button>
+</a>
+{% else %}
+<a href="{% url 'employees:change_status_route' pk=route.id %}">
+	<button type="button" class="btn btn-success">
+		Reactivate Route
+	</button>
+</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Permitted Commuters
+{% endblock %}
+
+{% block body %}
+{% if form %}
+Kindly type a Route Number below:<br><br>
+	<form method="POST" action="{% url 'transportations:view_allowed_commuters' %}">
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit" class="btn btn-primary btn-large">Submit</button>
+	</form>
+	{{message}}
+	<br><br>
+	What is a Route Number? This is a number assigned to a route. <br>
+	This is used by drivers to check who is allowed to ride on their vehicle. <br>
+	Contact your respective City Hall if you do not know your Route Number.
+{% else %}
+<h2>Permitted commuters for Route Number: {{id}}</h2><br>
+	<div class='container'>
+		{% for commuter in commuters %}
+			{{commuter.last_name}}, 
+			{{commuter.first_name }}
+			<br>
+		{% endfor %}
+	</div>
+{% endif %}
+{% endblock %}

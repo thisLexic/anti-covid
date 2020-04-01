@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+	<h1>Commuters Login Here!</h1>
+	<form action="{% url 'login' %}" method="post">
+		{% csrf_token %}
+		<label for="username">
+			Username:
+		</label>
+		<input type="text" name="username" placeholder="">
+
+		<label for="password">
+			Password:
+		</label>
+		<input type="password" name="password" placeholder="">
+
+		<input type="submit" name="" value="Login">
+		<br>
+		{{message}}
+	</form>
+</div>
+<h4>Have no account yet? Sign up here!</h4>
+<div class="container">
+	<a href="{% url 'signup' %}">
+		<button type="button" class="btn btn-success">
+			Sign Up
+		</button>
+	</a>
+</div>
+{% endblock %}

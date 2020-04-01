@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Permitted Routes
+{% endblock %}
+
+{% block body %}
+{% if form %}
+Kindly type your Commuter Number below:<br><br>
+	<form method="POST" action="{% url 'transportations:view_allowed_routes' %}">
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit" class="btn btn-primary btn-large">Submit</button>
+	</form>
+	{{message}}
+	<br><br>
+	What is a Commuter Number? This was given by the city you applied in. <br>
+	Contact your respective City Hall if you do not know your Commuter Number.
+{% else %}
+	<h2>Permitted routes for Commuter Number: {{id}}</h2><br>
+	<div class='container'>
+		{% for route in routes %}
+			<a href="{% url 'transportations:view_directions' pk=route.id %}">
+				<button type="button" class="btn btn-primary">
+					{{route.name}}
+				</button>
+			</a>
+			<br><br>
+		{% endfor %}
+	</div>
+{% endif %}
+{% endblock %}

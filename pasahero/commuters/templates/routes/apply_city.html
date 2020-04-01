@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Routes
+{% endblock %}
+
+{% block body %}
+<h2>Choose a city you want to apply for:</h2>
+<div class="jumbotron">
+	<form id="personForm" 
+	action="{% url 'commuters:apply_city' %}" 
+	data-cities-url="{% url 'commuters:ajax_load_cities' %}"
+	method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$("#id_province_id").change(function () {
+  var url = $("#personForm").attr("data-cities-url");
+  var provinceId = $(this).val();
+  $.ajax({
+    url: url,
+    data: {
+      'province_id': provinceId
+    },
+    success: function (data) {
+      $("#id_city_id").html(data);
+    }
+  });
+});
+</script>
+{% endblock %}

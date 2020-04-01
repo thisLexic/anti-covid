@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+All Routes
+{% endblock %}
+
+{% block body %}
+<h2>{{city.name}}</h2>
+{% if city.major_is_active %}
+	<h2>{{city.major_announcement}}</h2>
+{% endif %}
+{% if city.minor_is_active %}
+	<h4>{{city.minor_announcement}}</h4>
+{% endif %}
+<br>
+<div class="container">
+	{% if city.cell_number %}
+		Phone Number: {{city.cell_number}}<br>
+	{% endif %}
+	{% if city.tele_number %}
+		Telephone Number: {{city.tele_number}}<br>
+	{% endif %}
+	{% if city.email %}
+		Email: {{city.email}}
+	{% endif %}
+</div>
+<br><br>
+{% if routes %}
+	<h3>Kindly Select a Route to see its Available Times:</h3>
+	<br>
+	<div class='container'>
+		{% for route in routes %}
+			<a href="{% url 'transportations:view_directions' pk=route.id %}">
+				<button type="button" class="btn btn-primary">
+					{{route.name}}
+				</button>
+			</a>
+			<br><br>
+		{% endfor %}
+	</div>
+{% else %}
+	<h4>There are currently no routes for {{ city.name }}</h4>
+	<h6>Kindly contact the city if the are any inconsistencies</h6>
+{% endif %}
+{% endblock %}

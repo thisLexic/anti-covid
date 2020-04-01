@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Routes
+{% endblock %}
+
+{% block body %}
+<h2>You have logged in as {{commuter.first_name}} {{commuter.last_name}}</h2>
+<h3>My Routes</h3><br>
+	<div class='container'>
+		{% if allowed or pending or rejected or routes_inactive %}
+			{% if allowed %}
+				<h3>Allowed Routes</h3>
+				{% for route in allowed %}
+					<a href="{% url 'commuters:apply_route' pk=route.route_id.id %}">
+						<button type="button" class="btn btn-success">
+							{{ route.route_id.name }}
+						</button>
+					</a>
+					<br><br>
+				{% endfor %}
+			{% endif %}
+			{% if pending %}
+				<h3>Pending Routes</h3>
+				{% for route in pending %}
+					<a href="{% url 'commuters:apply_route' pk=route.route_id.id %}">
+							<button type="button" class="btn btn-warning">
+								{{ route.route_id.name }}
+							</button>
+					</a>
+					<br><br>
+				{% endfor %}
+			{% endif %}
+			{% if rejected %}
+			<h3>Rejected Routes</h3>
+			{% for route in rejected %}
+				<a href="{% url 'commuters:apply_route' pk=route.route_id.id %}">
+					<button type="button" class="btn btn-danger">
+						{{ route.route_id.name }}
+					</button>
+				</a>
+				<br><br>
+			{% endfor %}
+			{% endif %}
+			{% if routes_inactive %}
+			<h3>Inactive Routes</h3>
+				{% for route in routes_inactive %}
+					<a href="{% url 'commuters:apply_route' pk=route.route_id.id %}">
+						<button type="button" class="btn btn-secondary">
+							{{ route.route_id.name }}
+						</button>
+					</a>
+					<br><br>
+				{% endfor %}
+			{% endif %}
+		{% else %}
+			<h4>You are not permitted to take public transportation as of the moment. <br>Upload the necessary documents through the website and choose routes so that the City Halls can consider your request.</h4>
+			* If you have already did these steps, try contacting the City Hall of the respective location. To view their contact detials, <a href="{% url 'transportations:view_cities' %}">click here</a>.<br>
+			* If the route you applied for is currenly inactive, it will not be displayed
+		{% endif %}
+	</div>
+{% endblock %}

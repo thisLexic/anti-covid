@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+{% if cities %}
+	{% for city in cities %}
+		<h1>{{ city.name }}</h1>
+		<div class="container">
+			{% if city.major_is_active %}
+				<h2>{{city.major_announcement}}</h2>
+			{% endif %}
+			{% if city.minor_is_active %}
+				<h4>{{city.minor_announcement}}</h4>
+			{% endif %}
+		</div>
+		<br>
+	{% endfor %}
+{% else %}
+	<h2>No announcements as of the moment</h2>
+{% endif %}
+{% endblock %}

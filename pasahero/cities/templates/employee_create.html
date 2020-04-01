@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form enctype="multipart/form-data" action="{% url 'cities:add' %}" method="post">
+	{% csrf_token %}
+		{{ user_form.as_p }}
+		{{ employee_form.as_p }}
+		<button type="submit" class="btn btn-success">Create Employee</button>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Route
+{% endblock %}
+
+{% block body %}
+<h2>{{route.name}}</h2>
+{% if data %}
+	Available Times:
+	<br><br>
+	<div class='container'>
+		{% for datum in data %}
+			Starting Point: {{ datum.start_loc }}<br>
+			End Point: {{ datum.end_loc }}<br>
+			Time:	
+				{% if datum.times %}
+					{% for time in datum.times %}
+						{{time}}, 
+					{% endfor %}
+				{% else %}
+					Not Available
+				{% endif %}
+			<br><br>
+		{% endfor %}
+	</div>
+{% else %}		
+	<h3>No available trips for this route as of the moment.</h3>
+{% endif %}
+
+{% endblock %}

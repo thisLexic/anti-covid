@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block body %}
+To view the permitted commuters of a route, click the button below:
+<br><br>
+<a href="{% url 'transportations:view_allowed_commuters' %}">
+	<button type="button" class="btn btn-success">
+		Permitted Commuters
+	</button>
+</a>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form action="{% url 'cities:announcement_edit' %}" method="post">
+	{% csrf_token %}
+		<h3>Major Announcement:</h3>
+			<div class="container">
+				{{ form.major_is_active }} Check the box to display the major announcement to commuters
+				<br>
+				{{ form.major_announcement }}
+				<br>
+			</div>
+			<br><br>
+		<h3>Minor Announcement:</h3>
+			<div class="container">
+				{{ form.minor_is_active }} Check the box to display the minor announcement to commuters
+				<br>
+				{{ form.minor_announcement }}
+				<br>
+			</div>
+		<br><br><br>
+		<button type="submit" class="btn btn-success">Change</button>
+</form>
+{% endblock %}

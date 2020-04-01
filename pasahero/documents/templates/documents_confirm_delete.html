@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Are you sure you want to delete {{document.title}}? </h2>
+<form action="{% url 'documents:delete_document' pk=document.id %}" method="POST">
+{% csrf_token %}
+<br>
+<button type="submit" class="btn btn-danger">Yes, I am sure</button>
+</form>
+{% endblock %}

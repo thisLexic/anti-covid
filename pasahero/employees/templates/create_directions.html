@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Permitted Routes
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+	<form
+    action="{% url 'employees:add_directions' pk=route_id %}"
+    method="POST">
+    {% csrf_token %}
+    {{ form_direction.as_p }}
+	<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+{% endblock %}

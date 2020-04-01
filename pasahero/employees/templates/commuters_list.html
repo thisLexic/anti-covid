@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<a href="{% url 'employees:details_route' pk=route.id %}">
+	<button type="button" class="btn btn-primary">
+		Back
+	</button>
+</a>
+{% if allowed_routes.0 %}
+	<a href="{% url 'employees:pdf' pk=route.id status=allowed_routes.0.status %}">
+		<button type="button" class="btn btn-primary">
+			As PDF
+		</button>
+	</a>
+{% endif %}
+<br>
+<br>
+<h1>{{ route.name }}</h1>
+<h4>Via: {{ route.via }}</h4>
+<br>
+{% if allowed_routes.0.status == 'A' %}
+	<h3>Accepted Requests:</h3>
+{% elif allowed_routes.0.status == 'P' %}
+	<h3>Pending Requests:</h3>
+{% else %}
+	<h3>Rejected Requests:</h3>
+{% endif %}
+
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Request Date</th>
+      <th scope="col">Works At</th>
+      <th scope="col">Lives In</th>
+      <th scope="col">Profession</th>
+      <th scope="col">Company Name</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+	{% for ar in allowed_routes %}
+	    <tr>
+	      <td>{{ ar.requested_at }}</td>
+	      <td>{{ ar.commuter_id.works_city_id.name }}</td>
+	      <td>{{ ar.commuter_id.lives_city_id.name }}</td>
+	      <td>{{ ar.commuter_id.profession }}</td>
+	      <td>{{ ar.commuter_id.company_name }}</td>
+	      <td>
+			<a href="{% url 'employees:commuter_detail' pk=ar.commuter_id.id pk_ar=ar.id %}">
+				<button type="button" class="btn btn-primary">
+	      			{{ ar.commuter_id.last_name }}, {{ ar.commuter_id.first_name }}
+				</button>
+			</a>
+	      </td>
+	    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+
+{% if allowed_routes.has_other_pages %}
+  <ul class="pagination  justify-content-center">
+    {% if allowed_routes.has_previous %}
+      <li class="page-item">
+      	<a class="page-link" href="?page={{ allowed_routes.previous_page_number }}">
+      		&laquo;
+      	</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+	      	<a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+	      		&laquo;
+	      	</a>
+      </li>
+    {% endif %}
+    {% for i in allowed_routes.paginator.page_range %}
+      {% if allowed_routes.number == i %}
+      <li class="page-item disabled">
+	    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+       		{{i}}
+       	</a>
+       </li>
+      {% else %}
+       <li class="page-item">
+       	<a class="page-link" href="?page={{ i }}">
+       		{{ i }}
+       	</a>
+       </li>
+      {% endif %}
+    {% endfor %}
+    {% if allowed_routes.has_next %}
+      <li class="page-item">
+      	<a class="page-link" href="?page={{ allowed_routes.next_page_number }}">
+      		&raquo;
+      	</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+	      	<a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+	      		&raquo;
+	      	</a>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+{% endblock %}

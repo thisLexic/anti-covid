@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Routes
+{% endblock %}
+
+{% block body %}
+	<div class='container'>
+		{% if routes %}
+		<h3>My Allowed Routes</h3>
+		<h5>Choose one to set a preferred time for that route. This is so that the city hall can make the necessary changes to their transportation load for any given time. Your input is important to us!</h5><br>
+			{% for route in routes %}
+				<a href="{% url 'preferred_times:edit' pk=route.id %}">
+					<button type="button" class="btn btn-success">
+						{{ route.route_id.name }}
+					</button>
+				</a>
+				<br><br>
+			{% endfor %}
+		{% else %}
+			<h4>You are not permitted to take public transportation as of the moment. <br>Upload the necessary documents through the website and choose routes so that the City Halls can consider your request.</h4>
+			* If you have already did these steps, try contacting the City Hall of the respective location. To view their contact detials, <a href="{% url 'transportations:view_cities' %}">click here</a>.<br>
+			* If the route you applied for is currenly inactive, it will not be displayed
+		{% endif %}
+	</div>
+{% endblock %}

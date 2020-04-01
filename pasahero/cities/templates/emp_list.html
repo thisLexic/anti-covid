@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block body %}
+{% if employees_active %}
+<h2>Active Employees</h2><br>
+<table class="table table-striped">
+	<thead>
+		<tr>
+	      <th scope="col">Department</th>
+	      <th scope="col">Job</th>
+	      <th scope="col">First Name</th>
+	      <th scope="col">Last Name</th>
+	      <th scope="col"></th>
+    	</tr>
+	</thead>
+  <tbody>
+		{% for e in employees_active %}
+		  	<tr>
+				<td>
+					{{e.department}}
+				</td>
+				<td>
+					{{e.job_title}}
+				</td>
+				<td>
+					{{e.first_name}}
+				</td>
+				<td>
+					{{e.last_name}}
+				</td>
+				<td>
+					<a href="{% url 'cities:employee_change' pk=e.id %}">
+						<button type="button" class="btn btn-secondary">
+							Inactivate
+						</button>
+					</a>
+				</td>
+			</tr>
+		{% endfor %}
+  </tbody>
+</table><br><br>
+{% endif %}
+
+{% if employees_inactive %}
+<h2>Inactive Employees</h2><br>
+<table class="table table-striped">
+	<thead>
+		<tr>
+	      <th scope="col">Department</th>
+	      <th scope="col">Job</th>
+	      <th scope="col">First Name</th>
+	      <th scope="col">Last Name</th>
+	      <th scope="col"></th>
+    	</tr>
+	</thead>
+  <tbody>
+		{% for e in employees_inactive %}
+		  	<tr>
+				<td>
+					{{e.department}}
+				</td>
+				<td>
+					{{e.job_title}}
+				</td>
+				<td>
+					{{e.first_name}}
+				</td>
+				<td>
+					{{e.last_name}}
+				</td>
+				<td>
+					<a href="{% url 'cities:employee_change' pk=e.id %}">
+						<button type="button" class="btn btn-success">
+							Activate
+						</button>
+					</a>
+				</td>
+			</tr>
+		{% endfor %}
+  </tbody>
+</table><br><br>
+{% endif %}
+{% endblock %}

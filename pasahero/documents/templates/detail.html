@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .imgbox {
+        display: grid;
+        height: 100%;
+        width: 100%;
+    }
+    .center-fit {
+        max-width: 100%;
+        max-height: 100vh;
+        margin: auto;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<h3>{{ document.title }}</h3>
+<div class="container">
+    <h6>{{ document.description }}</h6>
+</div>
+<br>
+<a href="{% url 'documents:edit_document' pk=document.id %}">
+    <button type="button" class="btn btn-secondary">
+        Edit
+    </button>
+</a>
+<br><br>
+{% if document.file_type == 'pdf' %}
+    <div class="imgbox">
+        <embed class="center-fit" src="{{document.document.url}}" type='application/pdf' style='width:100%; height:50vw'><br>
+    </div>
+{% else %}
+    <div class="imgbox">
+        <image class="center-fit" src="{{document.document.url}}">
+    </div>
+{% endif %}
+<br><br>
+<a href="{% url 'documents:delete_document' pk=document.id %}">
+    <button type="button" class="btn btn-danger">
+        Delete
+    </button>
+</a>
+<br><br>
+* if there is something with wrong with the document, kindly try reuploading. <br>
+* make sure the file is an image or a pdf.
+{% endblock %}

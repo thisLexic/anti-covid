@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cities
+{% endblock %}
+
+{% block body %}
+To see all Available Routes and contact details of a specific City, click the appropriate City.
+<br><br>
+<div class='container'>
+	{% for city in cities %}
+		<a href="{% url 'transportations:view_routes' pk=city.id %}">
+			<button type="button" class="btn btn-primary">
+				{{city.name}}
+			</button>
+		</a>
+		<br><br>
+	{% endfor %}
+</div>
+{% endblock %}

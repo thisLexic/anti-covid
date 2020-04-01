@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+Manager Login Page
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+	<h1>Only City Hall staff are allowed to login here.</h1>
+	<h2>Attempting to login through this page, if you are not a City Hall staff, will be delt with by the proper authorities</h2>
+	<form action="{% url 'cities:login' %}" method="post">
+		{% csrf_token %}
+		<label for="username">
+			Username:
+		</label>
+		<input type="text" name="username" placeholder="">
+
+		<label for="password">
+			Password:
+		</label>
+		<input type="password" name="password" placeholder="">
+
+		<input type="submit" name="" value="Login">
+		<br>
+		{{message}}
+	</form>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block body %}
+	<form method="post">
+		{% csrf_token %}
+		<h3>Set your preferred time for {{ route.name }}</h3>
+		<h4>From {{ route.point_a }} to {{ route.point_b }}</h4>
+		<br>
+		<table class="table table-striped">
+		  <thead>
+		    <tr>
+		      <th scope="col">Monday</th>
+		      <th scope="col">Tuesday</th>
+		      <th scope="col">Wednesday</th>
+		      <th scope="col">Thursday</th>
+		      <th scope="col">Friday</th>
+		      <th scope="col">Saturday</th>
+		      <th scope="col">Sunday</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			    <tr>
+			      <td>{{form.mon_a_to_b}}</td>
+			      <td>{{form.tues_a_to_b}}</td>
+			      <td>{{form.wed_a_to_b}}</td>
+			      <td>{{form.thurs_a_to_b}}</td>
+			      <td>{{form.fri_a_to_b}}</td>
+			      <td>{{form.sat_a_to_b}}</td>
+			      <td>{{form.sun_a_to_b}}</td>
+			    </tr>
+		  </tbody>
+		</table>
+		<br><br>
+
+		<h4>From {{ route.point_b }} to {{ route.point_a }}</h4>
+		<table class="table table-striped">
+		  <thead>
+		    <tr>
+		      <th scope="col">Monday</th>
+		      <th scope="col">Tuesday</th>
+		      <th scope="col">Wednesday</th>
+		      <th scope="col">Thursday</th>
+		      <th scope="col">Friday</th>
+		      <th scope="col">Saturday</th>
+		      <th scope="col">Sunday</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			    <tr>
+			      <td>{{form.mon_b_to_a}}</td>
+			      <td>{{form.tues_b_to_a}}</td>
+			      <td>{{form.wed_b_to_a}}</td>
+			      <td>{{form.thurs_b_to_a}}</td>
+			      <td>{{form.fri_b_to_a}}</td>
+			      <td>{{form.sat_b_to_a}}</td>
+			      <td>{{form.sun_b_to_a}}</td>
+			    </tr>
+		  </tbody>
+		</table>
+		<br><br>
+		<button type="submit" class="btn btn-primary">Set Preferred Time</button>
+	</form>
+{% endblock %}

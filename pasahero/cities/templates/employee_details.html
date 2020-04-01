@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+<table class="table table-striped">
+	<thead>
+		<tr>
+	      <th scope="col">Department</th>
+	      <th scope="col">Job</th>
+	      <th scope="col">First Name</th>
+	      <th scope="col">Last Name</th>
+    	</tr>
+	</thead>
+  <tbody>
+	<tr>
+		<td>{{ employee.department }}</td>
+		<td>{{ employee.job_title }}</td>
+		<td>{{ employee.first_name }}</td>
+		<td>{{ employee.last_name }}</td>
+	</tr>
+  </tbody>
+</table>
+{% endblock %}
