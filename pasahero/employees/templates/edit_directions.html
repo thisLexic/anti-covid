@@ -11,13 +11,13 @@ Permitted Routes
     method="POST">
     {% csrf_token %}
     {{ form_direction.as_p }}
-	<button type="submit" class="btn btn-primary">Edit</button>
+	<button type="submit" class="btn btn-primary">Save</button>
 	</form>
-	<br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+	<a href="{% url 'employees:delete_direction' route_pk=route_pk dir_pk=dir_pk %}">
+		<button type="button" class="btn btn-danger">
+			Delete
+		</button>
+	</a>
 </div>
-<a href="{% url 'employees:delete_direction' route_pk=route_pk dir_pk=dir_pk %}">
-	<button type="button" class="btn btn-danger">
-		Delete
-	</button>
-</a>
 {% endblock %}
