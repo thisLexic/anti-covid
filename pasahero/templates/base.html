@@ -24,7 +24,7 @@
     {% if user.groups.all.0.name == 'city' %}
       <div class="container">
         <a class="navbar-brand orange" href="{% url 'cities:home_page' %}">
-          Announcements
+          <img src="{% static 'images/pasahero-ico.png' %}" style="width:40px;height:40px;">
         </a>
         <a class="navbar-brand orange" href='#' %}>
           {{user.username}}
@@ -35,6 +35,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href="{% url 'cities:home_page' %}">
+              Announcements
+            </a>
             <a class="nav-item nav-link active" href="{% url 'cities:list_routes' %}">
               All Routes
             </a>
