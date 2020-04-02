@@ -150,7 +150,7 @@ LOGIN_URL = '/login'
 
 if DEBUG:
     STATIC_URL = '/static/'
-    STATIC_ROOT = STATIC_DIR
+    STATICFILES_DIRS = (STATIC_DIR,)
     MEDIA_URL = '/media/'
     MEDIA_ROOT = MEDIA_DIR
 else:
