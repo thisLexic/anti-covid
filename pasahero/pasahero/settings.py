@@ -32,8 +32,8 @@ else:
     SECRET_KEY = os.environ.get('PASAHERO_SECRET_KEY')
 
 ALLOWED_HOSTS = ["127.0.0.1",
-"18.139.209.193",
-"ec2-18-139-209-193.ap-southeast-1.compute.amazonaws.com",
+"www.mypasahero.com",
+"mypasahero.com",
 ]
 
 
