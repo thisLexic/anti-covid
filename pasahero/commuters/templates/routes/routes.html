@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-<h1>{{ city.name }}</h1>
+<h1>{{ city.name }}:</h1>
 <br>
 {% if city.major_is_active or city.minor_is_active %}
 	<h3>Announcements:</h3>
@@ -32,6 +32,9 @@
 	{% endfor %}
 </div>
 {% else %}
-<h3>As of the momement, this city has not created any routes.</h3>
+<h4 align="justify">
+	As of the moment, {{ city.name }} has entered no routes on this website. <br>
+	Kindly contact your Local Government Units to avail of mypasahero.com so that your city's frontliners have an easier time getting to their place of work.
+</h4>
 {% endif %}
 {% endblock %}
