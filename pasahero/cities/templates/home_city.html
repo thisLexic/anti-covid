@@ -2,28 +2,25 @@
 
 {% block body %}
 {% if status == 'none' %}
-	<h2>
-		{{ city.name }} currently has no announcements. <br>
-		If you have an announcement for your commuters, contact your admin.
-	</h2>
+	<h4>Message from {{ city.name }}:</h4>
 {% elif status == 'maj' %}
-	<h6>Announcement to commuters:</h6>
-	<h2>
+	<h4>Message from {{ city.name }}:</h4>
+	<h4>
 		{{ city.major_announcement }}
-	</h2>
+	</h4>
 {% elif status == 'min' %}
-	<h6>Announcement to commuters:</h6>
-	<h4>
+	<h4>Message from {{ city.name }}:</h4>
+	<h5>
 		{{ city.minor_announcement }}
-	</h4>
+	</h5>
 {% else %}
-	<h6>Announcement to commuters:</h6>
-	<h2>
-		{{ city.major_announcement }}
-	</h2>
+	<h4>Message from {{ city.name }}:</h4>
 	<h4>
-		{{ city.minor_announcement }}
+		{{ city.major_announcement }}
 	</h4>
+	<h5>
+		{{ city.minor_announcement }}
+	</h5>
 {% endif %}
 <br><br>
 <a href="{% url 'cities:announcement_edit' %}">

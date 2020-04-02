@@ -2,12 +2,18 @@
 
 {% block body %}
 {% if routes %}
-<h3>Select a route to delete</h3>
-<h6>
-	If you plan on reactivating this route at some point in time, just deactivate the route. Do not delete it. <br>
-	Deleting a route will also delete its time slots.
-</h6>
-
+<h1 style="color:red;">WARNING!!</h1>
+<h5>
+	If you plan on reactivating this route at some point in time, <u>just deactivate</u> the route instead of deleting it.
+</h5>
+<h5>
+	The purpose of the delete functionality is to delete <b>accidental</b> route entries. It is not meant for deactivation. Use the Admin functionality of deactivation for that.
+</h5>
+<br>
+<h3 style="color:red;">
+	Deleting a route means deleting it and all data associated with it permanently.
+</h3>
+<br><br><br><br><br><br><br>
 <table class="table table-striped">
   <thead>
     <tr>

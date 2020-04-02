@@ -2,10 +2,8 @@
 {% load static %}
 
 {% block body %}
+<h4>{{city.name}}</h4>
 <img src="{% static 'images/pasahero.png' %}" style="width:50%;height:50%;display: block; margin-left: auto; margin-right: auto;">
-<br><br>
-<h1>{{city.name}}</h1>
-<h3>You have logged in as {{user.username}}</h3>
 <br><br><br><br><br><br>
 <a href="{% url 'employees:change_password' %}">
 	<button type="button" class="btn btn-secondary">

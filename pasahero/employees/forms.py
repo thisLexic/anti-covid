@@ -20,7 +20,7 @@ class CreateRouteForm(forms.ModelForm):
             "point_b":"Ex: Araneta Avenue",
         }
         labels = {
-            "name":"Displayed Route Name",
+            "name":"Route Name",
             "point_a":"Point A",
             "point_b":"Point B",
         }
