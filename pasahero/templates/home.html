@@ -1,14 +1,17 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 Home Page
 {% endblock %}
 
 {% block body %}
-<h2>
-	This is the PasaHero website
-</h2>
-<h4>
-	It is for the Filipino frontliners during this difficult quarantine period
+<br>
+<img src="{% static 'images/pasahero.png' %}" style="width:50%;height:50%;display: block; margin-left: auto; margin-right: auto;">
+<br>
+<h4 align=center>
+	For Filipino Frontliners Fighting COVID-19
 </h4>
+
+
 {% endblock %}

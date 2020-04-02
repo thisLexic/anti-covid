@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block body %}
+<img src="{% static 'images/pasahero.png' %}" style="width:50%;height:50%;display: block; margin-left: auto; margin-right: auto;">
+<br><br>
 {% if cities %}
 	{% for city in cities %}
 		<h1>{{ city.name }}</h1>
