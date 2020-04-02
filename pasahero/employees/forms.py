@@ -37,4 +37,4 @@ class CreateTimesForm(forms.ModelForm):
         widgets = {'time': forms.DateInput(attrs={'class':'form-control', 'type':'time'}),
         }
 
-CreateTimeFormSet = formset_factory(CreateTimesForm, extra=5, min_num=1)
+CreateTimeFormSet = formset_factory(CreateTimesForm, extra=4, min_num=1)
