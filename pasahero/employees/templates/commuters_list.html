@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<!-- This will be used during the testing period of the website -->
+<h4>
+Click one of the applicants names to display PasaHero information and then approve their application to the route!
+</h4>
+<br>
+<!-- This will be used during the testing period of the website -->
+
 <a href="{% url 'employees:details_route' pk=route.id %}">
 	<button type="button" class="btn btn-primary">
 		Back

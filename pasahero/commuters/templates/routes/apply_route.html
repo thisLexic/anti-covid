@@ -5,6 +5,14 @@ Route
 {% endblock %}
 
 {% block body %}
+
+<!-- This will be used during the testing period of the website -->
+<h4>
+	Click the "Apply" button to apply for the route. Afterwards, an Admin will consider your request; you could also just logout and then login again as an Admin from the homepage to approve your application yourself! Just remember, your name is Villabroza, Argent!
+</h4>
+<br>
+<!-- This will be used during the testing period of the website -->
+
 <h2>{{route.name}}</h2>
 {% if not allowed_route %}
 	<a href="{% url 'commuters:apply_route_action' pk=route.id %}">
