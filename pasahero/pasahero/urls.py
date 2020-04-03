@@ -25,6 +25,15 @@ urlpatterns = [
     path('employee/', include('employees.urls', namespace='employees')),
     path('preferred-times/', include('preferred_times.urls', namespace='preferred_times')),
     path('help/', include('help.urls', namespace='help')),
+
+
+# >>>>>> This will be used during the testing period of the website
+
+    path('/login-admin', views.login_admin, name="login-admin"),
+    path('/login-pasahero', views.login_pasahero, name="login-pasahero"),
+
+# <<<<<< This will be used during the testing period of the website
+
 ]
 
 if settings.DEBUG:

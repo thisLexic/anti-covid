@@ -64,3 +64,17 @@ def signup_user(request):
             'form':user_form,
             'registered':registered,
         })
+
+
+# >>>>>> This will be used during the testing period of the website
+
+def login_admin(request):
+    user = authenticate(username="admina", password="xyz11122")
+    login(request, user)
+    return HttpResponseRedirect(reverse('employees:home_page'))
+
+def login_pasahero(request):
+    user = authenticate(username="pasahero", password="xyz11122")
+    login(request, user)
+    return HttpResponseRedirect(reverse('commuters:view_my_routes'))
+# <<<<<< This will be used during the testing period of the website
