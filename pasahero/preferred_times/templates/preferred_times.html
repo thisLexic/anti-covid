@@ -4,6 +4,7 @@
 	<form method="post">
 		{% csrf_token %}
 		<h3>Set your preferred time for {{ route.name }}</h3>
+		<br>
 		<h4>From {{ route.point_a }} to {{ route.point_b }}</h4>
 		<br>
 		<table class="table table-striped">

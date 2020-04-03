@@ -1,25 +1,6 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='A' pk_ar=allowed_route.id pk_route=route.id %}">
-	<button type="button" class="btn btn-success">
-		Allow
-	</button>
-</a>
-<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='P' pk_ar=allowed_route.id pk_route=route.id %}">
-	<button type="button" class="btn btn-warning">
-		Undecided
-	</button>
-</a>
-<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='R' pk_ar=allowed_route.id pk_route=route.id %}">
-	<button type="button" class="btn btn-danger">
-		Reject
-	</button>
-</a>
-<br><br>
-<h6>Decision made by {{allowed_route.employee_id.first_name }} {{allowed_route.employee_id.last_name }}</h6>
-<br>
-
 <h3>Primary Information:</h3>
 <table class="table table-striped">
   	<tbody>
@@ -122,4 +103,23 @@
 		    </tr>
   	</tbody>
 </table>
+<br><br><br><br><br><br>
+<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='A' pk_ar=allowed_route.id pk_route=route.id %}">
+	<button type="button" class="btn btn-success">
+		Allow
+	</button>
+</a>
+<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='P' pk_ar=allowed_route.id pk_route=route.id %}">
+	<button type="button" class="btn btn-warning">
+		Undecided
+	</button>
+</a>
+<a href="{% url 'employees:decision_commuter' old_status=allowed_route.status new_status='R' pk_ar=allowed_route.id pk_route=route.id %}">
+	<button type="button" class="btn btn-danger">
+		Reject
+	</button>
+</a>
+<br><br>
+<h6>Decision made by {{allowed_route.employee_id.first_name }} {{allowed_route.employee_id.last_name }}</h6>
+
 {% endblock %}
