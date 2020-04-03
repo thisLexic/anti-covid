@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block css %}
-	<link rel="stylesheet" href="{% static 'css/help_dropdown.css' %}">
-{% endblock %}
 {% block body %}
 <h2>Admin</h2>
 <div class="container py-3">
@@ -21,7 +17,7 @@
                           </h5>
                     </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqExample">
                         <div class="card-body">
                            	The admin is created by the super admin. The super admin will give the username and password to the admin. There can be as many admins as needed per city or municipality.
                         </div>
@@ -86,7 +82,7 @@
                             </button>
                           </h5>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#faqExample">
                         <div class="card-body">
                            <ol>
                            	<li>

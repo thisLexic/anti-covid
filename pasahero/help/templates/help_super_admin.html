@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block css %}
-	<link rel="stylesheet" href="{% static 'css/help_dropdown.css' %}">
-{% endblock %}
 {% block body %}
 <h2>Super Admin</h2>
 <div class="container py-3">
@@ -19,7 +15,7 @@
                           </h5>
                     </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqExample">
                         <div class="card-body">
                             The super admin is created by the root user - the creator of the website. The super admin username and password are then given to the appropriate city hall official designated by the city or municipality mayor. It is important to note that there is only one super admin per city or municipality.
                         </div>
@@ -52,13 +48,13 @@
                             </button>
                           </h5>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#faqExample">
                         <div class="card-body">
                            <ol>
                            	<li>Ask the root user for the username and password of your city - ensure that you have the proper documents to prove that you are allowed to be the super admin of your city.</li>
                            	<li>Go to - <b>mypasahero.com/manage</b>. Use the username and password obtained in Step 1 to login. If this is your first time logging in, it is strongly advised to change your password.
                            	</li>
-                           	<li>Now you are in the Announcements page. If this is your first login, there will be no announcements at the moment (See how to number 3).</li>
+                           	<li>Now you are in the Announcements page. If this is your first login, there will be no announcements at the moment.</li>
                            </ol>
                         </div>
                     </div>
@@ -74,7 +70,7 @@
                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqExample">
                         <div class="card-body">
                            <ol>
-                           	<li>Upper right hand corner of the website, click the “Change Password” button</li>
+                           	<li>On the upper right hand corner of the website, click the “Change Password” button</li>
                            	<li>Enter the password given by the root user (or your current password) on “old password.” Type your new password on “new password.” Then retype your new password again on “new password confirmation.”</li>
                            	<li>Click the “Save changes” button</li>
                            </ol>
@@ -124,7 +120,8 @@
                            		Click “Add Admin” button
                            	</li>
                            	<li>
-                           		Create a username and password for the new admin. Note: usernames cannot be changed but passwords can be changed by the admin later on once the admin has logged in to his account.
+                           		Create a username and password for the new admin. <br>
+                           		Note: usernames cannot be changed but passwords can be changed by the admin later on once the admin has logged in to his account.
 
                            	</li>
                            	<li>
@@ -136,7 +133,7 @@
 
                            	</li>
                          
-                           		*Note: Once an Admin has been created, he can never be deleted. He can only be deactivated and, if necessary, reactivated. The purpose of this is for easy auditing. Once an Admin has been created, he is automatically set to active status.
+                           		Note: Once an Admin has been created, he can never be deleted. He can only be deactivated and, if necessary, reactivated. The purpose of this is for easy auditing. Once an Admin has been created, he is automatically set to active status.
 
                            	
                            </ol>
@@ -165,7 +162,7 @@
 
                            	</li>
                            	<li>
-                           		Now the Admin will be under the “Inactive Admins” table where they cannot sign in to the Admin page anymore
+                           		Now the Admin will be under the “Inactive Admins” table where they <b>cannot</b> sign in to the Admin page anymore
 
                            	</li>
                            </ol>
@@ -194,7 +191,7 @@
 
                            	</li>
                            	<li>
-                           		Now the Admin will be under the “Active Admins” table where they can sign in to the Admin page again
+                           		Now the Admin will be under the “Active Admins” table where they <b>can</b> sign in to the Admin page again
 
                            	</li>
                            </ol>
@@ -221,7 +218,7 @@
                            		Click the “Delete” button for the route you want to delete
                            	</li>
 
-								WARNING: It is not recommended to delete a route as it will delete all the commuter applications and other data associated with it. It is better to simply deactivate the route from the Admin page (See Admin User guidelines).
+								WARNING: It is not recommended to delete a route as it will delete all the commuter applications and other data associated with it. It is better to simply deactivate the route from the Admin page (See Admin help page).
 
                            </ol>
                         </div>
