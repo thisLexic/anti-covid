@@ -15,7 +15,7 @@ class CommuterForm(forms.ModelForm):
             'first_name':'First Name',
             'last_name':'Last Name',
             'middle_name':'Middle Name',
-            'profession':'Profession',
+            'profession':'Job',
             'present_address':'Present Address',
             'permanent_address':'Permanent Address',
             'cell_number':'Cell Phone',
@@ -25,7 +25,7 @@ class CommuterForm(forms.ModelForm):
             'comments':'Important Facts',
 
             'company_name':'Company Name',
-            'company_location':'Location',
+            'company_location':'Company Address',
             }
 
 class EditCommuterForm(forms.ModelForm):
