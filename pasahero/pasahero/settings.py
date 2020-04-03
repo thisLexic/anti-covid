@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'documents',
     'employees',
     'preferred_times',
+    'help',
+    
     'storages',
 ]
 
