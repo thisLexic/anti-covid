@@ -26,7 +26,7 @@ companies = ['Puregold', "The Generics Pharmacy", "BDO", "Power Plant", "Meralco
 
 commuter_group = Group.objects.get(name='commuter')
 
-for x in range(0,100):
+for x in range(0,20):
     user =  User.objects.create_user(username="c"+str(x), password="0000")
     commuter_group.user_set.add(user)
     city_work = random.choice(active_cities)

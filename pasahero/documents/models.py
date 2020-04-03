@@ -14,3 +14,6 @@ class Documents(models.Model):
         if extension == '.pdf':
             return 'pdf'
         return 'other'
+
+    def __str__(self):
+        return self.title

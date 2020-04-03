@@ -29,8 +29,8 @@ urlpatterns = [
 
 # >>>>>> This will be used during the testing period of the website
 
-    path('/login-admin', views.login_admin, name="login-admin"),
-    path('/login-pasahero', views.login_pasahero, name="login-pasahero"),
+    path('login-admin', views.login_admin, name="login-admin"),
+    path('login-pasahero', views.login_pasahero, name="login-pasahero"),
 
 # <<<<<< This will be used during the testing period of the website
 

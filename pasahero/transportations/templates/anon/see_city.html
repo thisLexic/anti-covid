@@ -6,6 +6,9 @@ My Routes
 
 {% block body %}
 <h2>Choose a city or municipality to display its routes</h2>
+<!-- This will be used during the testing period of the website -->
+<h4>As of the moment, only "Sample City A" from "Sample Province" has data entries. (Sample Province is at the very bottom of the Province dropdown menu.)</h4>
+<!-- This will be used during the testing period of the website -->
 <div class="jumbotron">
 	<form id="personForm" 
 	action="{% url 'transportations:view_cities' %}" 
