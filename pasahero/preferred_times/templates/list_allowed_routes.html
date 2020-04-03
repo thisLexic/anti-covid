@@ -8,7 +8,14 @@ My Routes
 	<div class='container'>
 		{% if routes %}
 		<h3>My Allowed Routes</h3>
-		<h5>Choose one to set a preferred time for that route. This is so that the city hall can make the necessary changes to their transportation load for any given time. Your input is important to us!</h5><br>
+		<h5>
+			Choose a route to set a preferred time of departure from that route. This is so that the city or municipality can better manage the public transportation in your area. <br> 
+			Your input is important to us! <br>
+		</h5>
+		<p>
+			Note: Entering your preferred time for a route does not necessarily mean availability of a trip at that time.
+		</p>
+		<br>
 			{% for route in routes %}
 				<a href="{% url 'preferred_times:edit' pk=route.id %}">
 					<button type="button" class="btn btn-success">
@@ -18,9 +25,12 @@ My Routes
 				<br><br>
 			{% endfor %}
 		{% else %}
-			<h4>You are not permitted to take public transportation as of the moment. <br>Upload the necessary documents through the website and choose routes so that the City Halls can consider your request.</h4>
-			* If you have already did these steps, try contacting the City Hall of the respective location. To view their contact detials, <a href="{% url 'transportations:view_cities' %}">click here</a>.<br>
-			* If the route you applied for is currenly inactive, it will not be displayed
+			<h4>
+				You are not permitted to take any public transportation as of the moment. <br>
+				Upload the necessary documents through the website and then choose a route to apply for. <br>
+				Afterwards, kindly wait for the city or municipality you applied for to decide on your request.
+			</h4>
+				* If you have already done these steps, try contacting city or municipality of the respective location.
 		{% endif %}
 	</div>
 {% endblock %}
