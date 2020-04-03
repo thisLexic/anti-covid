@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'css/help_dropdown.css' %}">
+{% endblock %}
+{% block body %}
+<h2>Super Admin</h2>
+<div class="container py-3">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="accordion" id="faqExample">
+                <div class="card">
+                    <div class="card-header p-2" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Q: How do I become a Super Admin?
+                            </button>
+                          </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+                        <div class="card-body">
+                            The super admin is created by the root user - the creator of the website. The super admin username and password are then given to the appropriate city hall official designated by the city or municipality mayor. It is important to note that there is only one super admin per city or municipality.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-2" id="headingTwo">
+                        <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Q: What can a Super Admin do?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                        <div class="card-body">
+                        	<ul>
+                        		<li>Create and manage Admins</li>
+                        		<li>Set city announcements</li>
+                        		<li>Delete routes</li>
+                        		<li>All powers of the admin (must create an admin user for self first)</li>
+                        	</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-2" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Q. How do you login?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>Ask the root user for the username and password of your city - ensure that you have the proper documents to prove that you are allowed to be the super admin of your city.</li>
+                           	<li>Go to - <b>mypasahero.com/manage</b>. Use the username and password obtained in Step 1 to login. If this is your first time logging in, it is strongly advised to change your password.
+                           	</li>
+                           	<li>Now you are in the Announcements page. If this is your first login, there will be no announcements at the moment (See how to number 3).</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-2" id="headingFour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              Q. How do you change your password?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>Upper right hand corner of the website, click the “Change Password” button</li>
+                           	<li>Enter the password given by the root user (or your current password) on “old password.” Type your new password on “new password.” Then retype your new password again on “new password confirmation.”</li>
+                           	<li>Click the “Save changes” button</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-2" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                              Q. How do you manage city announcements?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Announcements” button on the top part of the screen.
+							</li>
+                           	<li>
+                           		Here, you can see the present announcements to the commuters if there is any. Click the “Change” button to edit the announcement
+							</li>
+                           	<li>
+                           	There are two types of announcements. The Major Announcement and the Minor Announcements
+                           </li>
+                           	<li>To set an announcement, major or minor, type your announcement inside the big rectangular box. If you want  this announcement to be displayed, click the appropriate checkbox to display it.
+                           	</li>
+                           	<li>Scroll down and click the “Save” button
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-2" id="headingSix">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                              Q. How do you add an Admin?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click “Add Admin” button
+                           	</li>
+                           	<li>
+                           		Create a username and password for the new admin. Note: usernames cannot be changed but passwords can be changed by the admin later on once the admin has logged in to his account.
+
+                           	</li>
+                           	<li>
+                           		Fill in the rest of the form with the admin’s credentials.
+
+                           	</li>
+                           	<li>
+                           		Click “Create Admin User” to create the admin
+
+                           	</li>
+                         
+                           		*Note: Once an Admin has been created, he can never be deleted. He can only be deactivated and, if necessary, reactivated. The purpose of this is for easy auditing. Once an Admin has been created, he is automatically set to active status.
+
+                           	
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingSeven">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                              Q. How do you deactivate an Admin User?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “All Admins” button to display all admins
+
+                           	</li>
+                           	<li>
+                           		Look at the “Active Admins” table and click the minus sign “-” to deactivate the Admin
+
+                           	</li>
+                           	<li>
+                           		Now the Admin will be under the “Inactive Admins” table where they cannot sign in to the Admin page anymore
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingEight">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                              Q. How do you reactive an admin?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “All Admins” button to display all admins
+
+                           	</li>
+                           	<li>
+                           		Look at the “Inactive Admins” table and click the plus sign “+” to reactivate the Admin
+
+                           	</li>
+                           	<li>
+                           		Now the Admin will be under the “Active Admins” table where they can sign in to the Admin page again
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingNine">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                              Q. How do you delete a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “All Routes” button to display all routes
+                           	</li>
+                           	<li>
+                           		Click the “Delete” button for the route you want to delete
+                           	</li>
+
+								WARNING: It is not recommended to delete a route as it will delete all the commuter applications and other data associated with it. It is better to simply deactivate the route from the Admin page (See Admin User guidelines).
+
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--/row-->
+</div>
+<!--container-->
+
+{% endblock %}

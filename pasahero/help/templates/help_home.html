@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<div class="jumbotron">
+	<h3>
+		What type of user are you?
+	</h3>
+	<br>
+	<div class="container" align="center">
+		<a href="{% url 'help:pasahero' %}">
+			<button type="button" class="btn btn-warning">
+				PasaHero
+			</button>
+		</a>
+		 &nbsp
+		<a href="{% url 'help:admin' %}">
+			<button type="button" class="btn btn-warning">
+				Admin
+			</button>
+		</a>
+		 &nbsp
+		<a href="{% url 'help:superadmin' %}">
+			<button type="button" class="btn btn-warning">
+				Super Admin
+			</button>
+		</a>
+	</div>
+	<br>
+	* If you are unsure of what type of user you are, kindly read the About page.
+</div>
+{% endblock %}

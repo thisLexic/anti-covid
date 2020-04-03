@@ -1,0 +1,761 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'css/help_dropdown.css' %}">
+{% endblock %}
+{% block body %}
+<h2>Admin</h2>
+<div class="container py-3">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="accordion" id="faqExample">
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Q: How do I become an Admin?
+                            </button>
+                          </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+                        <div class="card-body">
+                           	The admin is created by the super admin. The super admin will give the username and password to the admin. There can be as many admins as needed per city or municipality.
+                        </div>
+                    </div>
+                </div>
+
+
+            	
+                <div class="card">
+                    <div class="card-header p-2" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Q. What can an Admin do?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ul>
+                           	<li>
+                           		View announcement of the city
+
+                           	</li>
+                           	<li>
+                           		Create a route
+
+                           	</li>
+                           	<li>
+                           		Activate and deactivate routes
+
+                           	</li>
+                           	<li>
+                           		Create and edit route details such as time of departure, starting point, end point, capacity, etc.
+
+                           	</li>
+                           	<li>
+                           		Accept, Reject, and Return to Pending pasaHero applications
+
+                           	</li>
+                           	<li>
+                           		View pasaHero information as basis for pasaHero application decision
+
+                           	</li>
+                           	<li>
+                           		View the total number of pasaHeroes per day in a given time slot for any route so that the Admin can analyse as basis for planning and managing transportation capacity and availability.
+
+                           	</li>
+                           </li>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Q. How do you login?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Ask the Super Admin for the username and password of your account.
+
+                           	</li>
+                           	<li>
+                           		Go to - <b>mypasahero.com/manage</b>. Use the username and password obtained in Step 1.1 to login
+
+                           	</li>
+                           	<li>
+                           		If this is your first time logging in, it is strongly advised to change your password (See how to number 2.)
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingFour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              Q. How do you change your password?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “pasaHero” icon on the upper left corner to go to your homepage
+
+                           	</li>
+                           	<li>
+                           		Click the “Change Password” button
+
+                           	</li>
+                           	<li>
+                           		Enter the password given by the Super User (or your current password) on “old password.” Type your new password on “new password.” Then retype your new password again on “new password confirmation.”
+
+                           	</li>
+                           	<li>
+                           		Click the “Save changes” button
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                              Q. How do you add a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Add Route” button
+
+                           	</li>
+                           	<li>
+                           		Fill up the form with the necessary information:
+
+Route Name - The name of the route
+this is the name which pasaHeroes can see when they apply for the route
+e.g. Quezon City Circle - Araneta Avenue
+Via - the path used by the vehicle
+Point A - The area where the route will end
+e.g. Quezon City Circle
+Point B - The other area where the route will end
+e.g. Araneta Avenue
+                           	</li>
+                           	<li>
+                           		Click the “Create Route” button
+
+                           	</li>
+                           	<li>
+                           		*Note: Once a route has been created, it is automatically set to active status. Hence, it can be viewed from the active routes (see how to 4)
+
+                           	</li>
+                           	<li>
+                           		
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingSix">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                              Q. How do you display all active and inactive routes?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		This will display all active or inactive routes depending on which button was clicked in 4.1. 
+
+                           	</li>
+                           	<li>
+                           		You can also see how many pasaHero applications have been accepted, pending, and rejected for all respective routes.
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingSeven">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                              Q. How do you deactivate a route
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” button above the site to display all currently active routes
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route you want to deactivate
+
+                           	</li>
+                           	<li>
+                           		Scroll down to the bottom of the page and then click “Deactivate Route”
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingEight">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                              Q. How do you reactivate a route
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Inactive Route” button above the site to display all currently inactive routes
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route you want to deactivate
+                           	</li>
+                           	<li>
+                           		Scroll down to the bottom of the page and then click “Reactivate Route”
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingNine">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                              Q. How do you display route information
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		
+Click the “Active Route” or “Inactive Route” button above the site
+                           	</li>
+                           	<li>
+                           		
+Click the name of the route
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingTen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                              Q. How do you add trips to a route
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route
+
+                           	</li>
+                           	<li>
+                           		Click the “Add a Trip” button
+
+                           	</li>
+                           	<li>
+                           		Fill in the form
+
+                           	</li>
+                           	<li>
+                           		Click the “Submit” button
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingEleven">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                              Q. How do you add departure times and capacities to a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route
+
+                           	</li>
+                           	<li>
+                           		Click the “Add” button under the “Departure Times and Capacity” column. Note: If there is no “Add” button, make sure you have added a Trip to the Route first
+
+                           	</li>
+                           	<li>
+                           		Fill up the form. 
+                           		You may enter one to five time/capacity entries per form
+The time is in HH : MM : AM or PM format
+
+                           	</li>
+                           	<li>
+                           		Click the “Create” button
+
+                           	</li>
+                           	<li>
+                           		
+
+Note: If you want to edit the Departure Time/Capacity of a trip, you cannot. Instead, you need to delete the departure data and then add a new entry.
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingTwelve">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                              Q. How do you edit the trip of a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route
+
+                           	</li>
+                           	<li>
+                           		Click the “Edit” button of the Trip you want to edit
+
+                           	</li>
+                           	<li>
+                           		Click “Save”
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingThirteen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                              Q. How do you delete the trip of a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>Click the name of the route
+
+                           		
+                           	</li>
+                           	<li>
+                           		
+Click the “Edit” button of the Trip you want to edit
+
+                           	</li>
+                           	<li>
+                           		Click “Delete”
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingFourteen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                              Q. How do you delete a specific departure time and capacity of a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route
+
+                           	</li>
+                           	<li>
+                           		Click the “Delete” button of the Departure Data you want to delete
+
+                           	</li>
+                           	<li>
+                           		Click the “Delete” button of the specific time you want to delete
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingFifteen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                              Q. How do you display all accepted, pending, or rejected PasaHero applications of a given route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route
+
+                           	</li>
+                           	<li>
+                           		Click the “Accepted,” “Pending,” or “Rejected,” colored green, yellow, and red, respectively.
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingSixteen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                              Q. How do you get a PDF copy of all accepted, pending, or rejected, PasaHero applications of a given route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route
+
+                           	</li>
+                           	<li>
+                           		Click the “Accepted,” “Pending,” or “Rejected,” button.
+
+                           	</li>
+                           	<li>
+                           		Click the “As PDF” button
+                           	</li>
+                           	<li>
+                           		Download the file
+
+                           	</li>
+                           	<li>
+                           		If you want, you can print the PDF
+
+                           	</li>
+                           	<li>
+                           		This is most useful for the drivers of the transport vehicle. They will know who is allowed to ride their vehicles.
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingSeventeen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                              Q. How do you view a specific PasaHero application
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseSeventeen" class="collapse" aria-labelledby="headingSeventeen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route
+                           	</li>
+                           	<li>
+                           		Click the “Accepted,” “Pending,” or “Rejected,” button.
+
+                           	</li>
+                           	<li>
+                           		Click the name of the PasaHero
+
+                           	</li>
+                           	<li>
+                           		To access the documents of the PasaHero, scroll to the bottom and click the appropriate document title in the “Documents” table. If there are no entries, kindly contact the PasaHero to upload his documents.
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingEighteen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+                              Q. How do you accept or reject a PasaHero application?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseEighteen" class="collapse" aria-labelledby="headingEighteen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the name of the route
+
+                           	</li>
+                           	<li>
+                           		Click the “Accepted,” “Pending,” or “Rejected,” button.
+
+                           	</li>
+                           	<li>
+                           		Click the name of the PasaHero
+
+                           	</li>
+                           	<li>
+                           		Scroll to the bottom and click “Allow” or “Reject”. If you click “Undecided,” it will return the PasaHero to the “Pending” status
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingNineteen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
+                              Q. How do you view the preferred times of all allowed PasaHeroes in a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseNineteen" class="collapse" aria-labelledby="headingNineteen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Active Route” or “Inactive Route” button above the site
+
+                           	</li>
+                           	<li>
+                           		Click the “View” button. This will give you one direction (From Point A to Point B of the route)
+
+                           	</li>
+                           	<li>
+                           		Click “Flip” to see the data for the opposite direction (From Point B to Point A of the route)
+
+                           	</li>
+                           	<li>
+                           		This will provide important data which can be used as basis for the number of transport vehicles at a given time for the route
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingTwenty">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+                              Q. How do you view the announcement of your city?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseTwenty" class="collapse" aria-labelledby="headingTwenty" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Announcements” button on the upper part of the website
+
+                           	</li>
+                           	Note: only the Super Admin can change the announcement of a city.
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--/row-->
+</div>
+<!--container-->
+
+
+{% endblock %}

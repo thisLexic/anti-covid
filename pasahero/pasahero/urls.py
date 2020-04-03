@@ -24,6 +24,7 @@ urlpatterns = [
     path('manage/', include('cities.urls', namespace='cities')),
     path('employee/', include('employees.urls', namespace='employees')),
     path('preferred-times/', include('preferred_times.urls', namespace='preferred_times')),
+    path('help/', include('help.urls', namespace='help')),
 ]
 
 if settings.DEBUG:

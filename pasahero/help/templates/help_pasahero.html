@@ -1,0 +1,440 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'css/help_dropdown.css' %}">
+{% endblock %}
+{% block body %}
+<h2>Pasahero</h2>
+<div class="container py-3">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="accordion" id="faqExample">
+                <div class="card">
+                    <div class="card-header p-2" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Q: How do I become a PasaHero?
+                            </button>
+                          </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+                        <div class="card-body">
+                            Visit the Home Page of the PasaHero website at mypasahero.com and then click the “Sign Up” button. Fill up the form, register, and then login. Anyone can be a PasaHero!                        
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Q. What can a PasaHero do?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ul>
+                           	<li>
+                           		Uploading, Viewing, Editing, and Deleting their document
+
+                           	</li>
+                           	<li>
+                           		Viewing all routes of a city with each route’s details - starting point, end point, time of departure, etc.
+
+                           	</li>
+                           	<li>
+                           		Apply for a route and view the status of the application
+
+                           	</li>
+                           	<li>
+                           		View announcements made by the cities they applied for
+
+                           	</li>
+                           	<li>
+                           		Edit some information about himself or herself
+
+                           	</li>
+                           	<li>
+                           		Create and edit preferred time of departure for all routes they are allowed to take
+
+                           	</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Q. How do you sign up?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Go to - mypasahero.com
+
+                           	</li>
+                           	<li>
+                           		Click the “Sign Up” button
+
+                           	</li>
+                           	<li>
+                           		Fill up the form with a username. Enter your password in “Password” and “Confirm Password”
+
+                           	</li>
+                           	<li>
+                           		Click the “Register” button
+
+                           	</li>
+                           	<li>
+                           		Now that you have signed up as a PasaHero, you can login
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingFour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              Q. How do you login?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Make sure you have Signed Up first
+
+                           	</li>
+                           	<li>
+                           		Go to - mypasahero.com
+
+                           	</li>
+                           	<li>
+                           		Click the “Login” button on the upper right corner of the site.
+
+                           	</li>
+                           	<li>
+                           		Fill up the form with your username and password that you used when you signed up
+
+                           	</li>
+                           	<li>
+                           		Click the “Login” button
+
+                           	</li>
+                           	<li>
+                           		If this is your first time logging in, you will need to fill up a form about yourself before being able to use the other features of the website as a PasaHero
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                              Q. How do you edit some information about yourself?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Edit Info” button on the upper right corner of the website
+
+                           	</li>
+                           	<li>
+                           		Make the necessary changes on the form
+
+                           	</li>
+                           	<li>
+                           		Click “Save Changes” to save the changes or “Go Back” if you do not want to save the changes.
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingSex">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSex" aria-expanded="false" aria-controls="collapseSex">
+                              Q. How do you upload documents?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseSex" class="collapse" aria-labelledby="headingSex" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Documents” button
+
+                           	</li>
+                           	<li>
+                           		Click the “Upload” button
+
+                           	</li>
+                           	<li>
+                           		Enter a title and description
+
+                           	</li>
+                           	<li>
+                           		Click “Browse” and then select an image or PDF file
+
+                           	</li>
+                           	<li>
+                           		Click “Submit”
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingSeven">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                              Q. How do you view, edit, or delete documents?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Viewing, Editing, and Deleting Documents
+                           	</li>
+                           	<li>
+                           		Click the “Documents” button
+
+                           	</li>
+                           	<li>
+                           		Click the document title
+
+                           	</li>
+                           	<li>
+                           		Click “Edit” to edit the title and description. 
+
+                           	</li>
+                           	<li>
+                           		To edit the document itself, delete the original document first by clicking the “Delete” button and then upload a new document.
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingEight">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                              Q. How do you view route details
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		
+Click the “Apply Routes” button
+                           	</li>
+                           	<li>
+Select a province and city
+                           		
+                           	</li>
+                           	<li>
+                           		
+Select a route
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingNine">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                              Q. How do you apply for a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Apply Routes” button
+
+                           	</li>
+                           	<li>
+                           		Select a province and city
+
+                           	</li>
+                           	<li>Select a route
+                           		
+                           	</li>
+                           	<li>
+                           		Click the “Apply” button
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingTen">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                              Q. How do you view routes you have applied for?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click “My Routes”
+
+                           	</li>
+                           	<li>
+                           		Click a route to display the specifics of that route
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingEleven">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                              Q. How do you view all the announcements of the cities where you applied a route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the PasaHero icon on the upper left part of the website                           		
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <div class="card-header p-2" id="headingTwelve">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                              Q. How do you set a preferred time of departure for an allowed route?
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#faqExample">
+                        <div class="card-body">
+                           <ol>
+                           	<li>
+                           		Click the “Select Preferred Times” button on the upper side of the website
+
+                           	</li>
+                           	<li>Select an allowed route
+
+                           		
+                           	</li>
+                           	<li>
+                           		Fill up the form
+                           	</li>
+                           	<li>
+                           		The time is a dropdown menu wherein the options are already set. This is so that the Admins can better process PasaHero preferred times data.
+
+                           	</li>
+                           	<li>
+                           		Click “Set Preferred Time”
+
+                           	</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--/row-->
+</div>
+<!--container-->
+
+{% endblock %}
