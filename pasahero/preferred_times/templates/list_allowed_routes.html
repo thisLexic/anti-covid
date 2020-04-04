@@ -7,7 +7,7 @@ My Routes
 {% block body %}
 	<div class='container'>
 		{% if routes %}
-		<h3>My Allowed Routes</h3>
+		<h3>My Routes</h3>
 		<h5>
 			Choose a route to set a preferred time of departure from that route. This is so that the city or municipality can better manage the public transportation in your area. <br> 
 			Your input is important to us! <br>
@@ -26,9 +26,8 @@ My Routes
 			{% endfor %}
 		{% else %}
 			<h4>
-				You are not permitted to take any public transportation as of the moment. <br>
-				Upload the necessary documents through the website and then choose a route to apply for. <br>
-				Afterwards, kindly wait for the city or municipality you applied for to decide on your request.
+				Upload the necessary documents through the website via the "Documents" button and then choose a route to join via the "Join Route" button. <br>
+				Afterwards, kindly wait for the city or municipality to provide a response.
 			</h4>
 				* If you have already done these steps, try contacting city or municipality of the respective location.
 		{% endif %}
