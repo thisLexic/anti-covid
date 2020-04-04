@@ -37,3 +37,6 @@ class Times(models.Model):
 
     def __str__(self):
         return str(self.time)
+
+    def str_time(self):
+        return self.time.strftime("%-I:%M:%p")
