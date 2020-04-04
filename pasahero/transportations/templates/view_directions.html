@@ -7,23 +7,36 @@ Route
 {% block body %}
 <h2>{{route.name}}</h2>
 {% if data %}
-	Available Times:
-	<br><br>
-	<div class='container'>
-		{% for datum in data %}
-			Starting Point: {{ datum.start_loc }}<br>
-			End Point: {{ datum.end_loc }}<br>
-			Time:	
-				{% if datum.times %}
-					{% for time in datum.times %}
-						{{time}}, 
-					{% endfor %}
-				{% else %}
-					Not Available
-				{% endif %}
-			<br><br>
-		{% endfor %}
-	</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Starting Point</th>
+      <th scope="col">End Point</th>
+      <th scope="col">Vehicle</th>
+      <th scope="col">Duration (minutes)</th>
+      <th scope="col">Departure Times</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for datum in data %}
+	    <tr>
+	      <td>{{ datum.start_location }}</td>
+	      <td>{{ datum.end_location}}</td>
+	      <td>{{ datum.vehicle }}</td>
+	      <td>{{ datum.duration_minutes }}</td>
+	      <td>
+		     <table class="table table-dark">
+			    {% for t in datum.ordered_times %}
+		       		<tr>
+				        <td>{{t.time}}</td>
+		    		</tr>
+			    {% endfor %}
+		     </table>
+	      </td>
+	    </tr>
+	{% endfor %}
+  </tbody>
+</table>
 {% else %}		
 	<h3>No available trips for this route as of the moment.</h3>
 {% endif %}

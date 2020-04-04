@@ -44,19 +44,8 @@ def view_directions(request, pk):
         route = directions[0].route_id
     except:
         route = "There are currently no trips for this route."
-    data = []
-    for direction in directions:
-        datum = {}
-        datum['start_loc'] = direction.start_location
-        datum['end_loc'] = direction.end_location
-        times = direction.ordered_times()
-        ava_times = []
-        for time in times:
-            ava_times.append(time.time)
-        datum['times'] = ava_times
-        data.append(datum)
     return render(request, 'view_directions.html', {
-            'data':data,
+            'data':directions,
             'route':route,
         })
 
