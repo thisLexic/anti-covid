@@ -393,7 +393,7 @@ class TimesList(EmployeeRequiredMixin, ListView):
         route = direction.route_id
         if route.city_id == Employees.objects.get(user_id=self.request.user
             ).city_id:
-            times = direction.times.all()
+            times = direction.ordered_times()
             return {'times':times,
                     'dir_pk':dir_pk
                 }

@@ -1,15 +1,6 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
-<!-- This will be used during the testing period of the website -->
-<h4>Here, you can add trips to the route using the "Add A Trip" button.</h4>
-<h5>
-	Also, try clicking the "Pending" button to see all the pending PasaHero applications for this route!
-</h5>
-<br>
-<!-- This will be used during the testing period of the website -->
-
 <h1>{{ route.name }}</h1>
 <h4>Via: {{ route.via }}</h4>
 <h6>Last Edited By: {{ route.employee_id.first_name }} {{ route.employee_id.last_name }}</h6>
@@ -54,7 +45,7 @@
 	      <td>{{ d.duration_minutes }}</td>
 	      <td>
 		     <table class="table table-dark">
-			    {% for t in d.times.all %}
+			    {% for t in d.ordered_times %}
 		       		<tr>
 				        <td>{{t.time}}</td>
 				        <td>{{t.capacity}}</td>
