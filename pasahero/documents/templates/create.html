@@ -6,7 +6,8 @@ Permitted Routes
 
 {% block body %}
 <div class="jumbotron">
-	<h3>Only PDF and image files are supported at the moment</h3>
+	<h4>Suggested documents to upload: Valid Company ID, Certificate of Employment, and Proof of Residence (e.g. Meralco Bill)</h4>
+	<h6>* Only PDF and image files are supported at the moment</h6>
 	<form id="personForm" 
 	enctype= "multipart/form-data"
     action="{% url 'documents:create' %}"
