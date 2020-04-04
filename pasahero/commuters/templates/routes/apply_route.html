@@ -8,7 +8,7 @@ Route
 
 <!-- This will be used during the testing period of the website -->
 <h4>
-	Click the "Apply" button to apply for the route. Afterwards, an Admin will consider your request; you could also just logout and then login again as an Admin from the homepage to approve your application yourself! Just remember, your name is Villabroza, Argent!
+	Click the "Join" button to join a route. Afterwards, an Admin will look over your request; you could also just logout and then login again as an Admin from the homepage to confirm your own request! Just remember, your name is Villabroza, Argent!
 </h4>
 <br>
 <!-- This will be used during the testing period of the website -->
@@ -17,17 +17,18 @@ Route
 {% if not allowed_route %}
 	<a href="{% url 'commuters:apply_route_action' pk=route.id %}">
 		<button type="button" class="btn btn-primary">
-			Apply
+			Join
 		</button>
 	</a><br><br>
 {% elif allowed_route.status == "A" %}
-You are permitted to use this route
+You have joined this route
 
 {% elif allowed_route.status == "P" %}
-Your request for this route is pending
+Your request is pending at the moment
 
 {% elif allowed_route.status == "R" %}
-The city is not allowing you to use this route
+Your request for the route cannot be serviced as of the moment. <br>
+Kindly contact your city or municipality for more information.
 {% endif %}
 <br>
 {% if directions %}
@@ -64,7 +65,7 @@ The city is not allowing you to use this route
 </table>
 {% else %}
 	<h3>No trips as of the moment</h3>
-	<p>* Can still apply for the route in case trips are created</p>
+	<p>* You can still join in case trips are created</p>
 <br>
 {% endif %}
 {% endblock %}
