@@ -8,8 +8,8 @@ My Routes
 <!-- This will be used during the testing period of the website -->
 <h4>Hello! Thank you for logging in as a PasaHero!</h4>
 <h6 align="justify">
-	Who are the PasaHeroes? They are the frontliners. They are the people who need and apply for transportation which may take the form of jeeps, buses, vans, etc. The path that these vehicles take are called routes. PasaHeroes upload documents into their account which validate their identity and their place of work so that the Admin can approve their application for these routes that they are applying for. Once a PasaHero has been approved to take a route, he or she can provide his or her preference for the time of departure of the vehicles that will transport them from their residence to their place of work. This will be processed by the Admin as the basis for route availability and capacity. <br><br>
-	To experience the site as a PasaHero, click "Documents" to upload a document or click "Apply Routes" to apply for a route.
+	Who are the PasaHeroes? They are the frontliners. They are the people who need transportation which may take the form of jeeps, buses, vans, etc. The path that these vehicles take are called routes. PasaHeroes upload documents into their account which validate their identity and their place of work so that the Admin can properly review their request to join the route. Once a PasaHero has joined a route, he or she can provide his or her preference for the time of departure of the vehicles that will transport them from their residence to their place of work. This will be processed by the Admin as the basis for route availability and capacity. <br><br>
+	To experience the site as a PasaHero, click "Documents" to upload a document or click "Join Routes" to join a route.
 </h6>
 <br>
 <!-- This will be used during the testing period of the website -->
@@ -18,7 +18,7 @@ My Routes
 	<div class='container'>
 		{% if allowed or pending or rejected or routes_inactive %}
 			{% if allowed %}
-				<h3>Allowed Routes</h3>
+				<h3>Joined Routes</h3>
 				{% for route in allowed %}
 					<a href="{% url 'commuters:apply_route' pk=route.route_id.id %}">
 						<button type="button" class="btn btn-success">
@@ -40,10 +40,12 @@ My Routes
 				{% endfor %}
 			{% endif %}
 			{% if rejected %}
-			<h3>Rejected Routes</h3>
+			<h3>Incomplete Routes</h3>
+			<p>As of the moment, your request cannot be serviced. <br>
+			 advisements will come as soon as resources allow it. </p>
 			{% for route in rejected %}
 				<a href="{% url 'commuters:apply_route' pk=route.route_id.id %}">
-					<button type="button" class="btn btn-danger">
+					<button type="button" class="btn btn-primary">
 						{{ route.route_id.name }}
 					</button>
 				</a>
@@ -62,7 +64,7 @@ My Routes
 				{% endfor %}
 			{% endif %}
 		{% else %}
-			<h4>You are not permitted to take public transportation as of the moment. <br>Upload the necessary documents through the website and choose routes so that the City Halls can consider your request.</h4>
+			<h4>You have not joined a route as of the moment. <br>Upload the necessary documents through the website and choose routes so that the city or municipality can see your request.</h4>
 		{% endif %}
 	</div>
 {% endblock %}
