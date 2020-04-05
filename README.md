@@ -1,4 +1,4 @@
-The Problem this project is meant to alleviate
+## The Problem this project is meant to alleviate
 
 This site attempts to solve an integral problem in the current state of the Luzon quarantine. Due to the nature of the ECQ Enhanced Community Quarantine, cities and municipalities have their own IRR Implementing Rules and Regulations. Some cities are more lenient than others while some cities and municipalities make it very difficult if not impossible for people to go in or out of their respective locations.
 
@@ -10,7 +10,7 @@ Basically, the problem is that workers need a way to go from their residence to 
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-The Solution this project is meant to provide
+## The Solution this project is meant to provide
 
 With the problem made clear, this website provides a possible solution. The website has three users: PasaHeroes, Admins, and Super Admins.
 
@@ -27,49 +27,43 @@ A Super Admin is the general manager of the whole transport system in his or her
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-Currently supported features of the application:
+## Currently supported features of the application:
 
 PasaHeroes:
-
-    Uploading, Viewing, Editing, and Deleting their document
-    
-    Viewing all routes of a city with each route’s details - starting point, end point, time of departure, etc.
-    
-    Join a a route and view the status of the request
-    
-    View announcements made by the cities they applied for
-    
-    Edit some information about himself or herself
-    
-    Create and edit preferred time of departure for all routes they have joined
+- Uploading, Viewing, Editing, and Deleting their document
+- Viewing all routes of a city with each route’s details - starting point, end point, time of departure, etc.
+- Join a a route and view the status of the request
+- View announcements made by the cities they applied for
+- Edit some information about himself or herself
+- Create and edit preferred time of departure for all routes they have joined
 
 Admins: 
-    View announcement of the city
-    Create a route
-    Activate and deactivate routes
-    Create and edit route details such as time of departure, starting point, end point, capacity, etc.
-    Accept, Reject, and Return to Pending PasaHero requests
-    View PasaHero information as basis for PasaHero request decisions
-    View the total number of PasaHeroes per day in a given time slot for any route so that the Admin can analyse as basis for planning and managing transportation capacity and availability.
+- View announcement of the city
+- Create a route
+- Activate and deactivate routes
+- Create and edit route details such as time of departure, starting point, end point, capacity, etc.
+- Accept, Reject, and Return to Pending PasaHero requests
+- View PasaHero information as basis for PasaHero request decisions
+- View the total number of PasaHeroes per day in a given time slot for any route so that the Admin can analyse as basis for planning and managing transportation capacity and availability.
 
 Super Admin:
-    Create and manage Admins
-    Set city announcements
-    Delete routes
-    All powers of the admin (must create an admin user for self first)
+- Create and manage Admins
+- Set city announcements
+- Delete routes
+- All powers of the admin (must create an admin user for self first)
     
 -------------------------------------------------------------------------------------------------------------------------------
 
-Future features/optimisations:
-  GPS/Map of the route
-  Messaging functionality between Admins and PasaHeroes
-  Captcha for bots
-  Email Verification for Sign Ups
-  Forgot password functionality for Admins and PasaHeroes
+## Future features/optimisations:
+- GPS/Map of the route
+- Messaging functionality between Admins and PasaHeroes
+- Captcha for bots
+- Email Verification for Sign Ups
+- Forgot password functionality for Admins and PasaHeroes
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-Message to the reader
+## Message to the reader
 
 Help in the form of optimisations or critiques would be much appreciated.
 The project is currently active on the following website:
