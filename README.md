@@ -51,6 +51,7 @@ Super Admin:
     Set city announcements
     Delete routes
     All powers of the admin (must create an admin user for self first)
+    
 -------------------------------------------------------------------------------------------------------------------------------
 
 Future features/optimisations:
