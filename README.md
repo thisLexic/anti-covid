@@ -1,100 +1,70 @@
-The Problem this project attempts to alleviate:
+The Problem this project is meant to alleviate
 
-This site attempts to solve an integral problem in the current state of the Philippine quarantine. 
-Due to the nature of the covid quarantine in our country, cities and minicipalities 
-have their own way of implementing the quarantine. 
-Some cities are more lenient than others but other cities and municipalities make it very difficult 
-for people to go in or out of their respective locations.
+This site attempts to solve an integral problem in the current state of the Luzon quarantine. Due to the nature of the ECQ Enhanced Community Quarantine, cities and municipalities have their own IRR Implementing Rules and Regulations. Some cities are more lenient than others while some cities and municipalities make it very difficult if not impossible for people to go in or out of their respective locations.
 
-Now, this is a huge problem for the work force of the Philippines: 
-nurses, doctors, cashiers, technicians, security guards, janitors, etc. 
-Some workers do not live in the city where their place of work is. 
-Even those that live in the city where their place of work is, it is still hard because public transportation is gone 
-for the most part. This makes transportation for the work force hard.
-Since the work force cannot go to their place of work, businesses are understaffed. 
-This means that the general public will have a hard time buying necessary goods and services.
+Now, this is a huge problem for the essential work force of Luzon, namely: nurses, doctors, supermarket staff and cashiers, technicians, security guards, janitors, among many others. Some workers do not live in the city where their place of work is and even those who live within the city, it is still difficult for them, as public transportation is suspended.
 
-Basically, the problem is that workers need a way to go from their residence to their place of work 
-without being stopped by checkpoints, lack of transportation, and other hurdles.
+Since they cannot go to their place of work, businesses are understaffed. This translates to our countrymen not availing of basic goods and services as efficiently as would be ideal. This is especially critical for those in the health service sector of our communities.
+
+Basically, the problem is that workers need a way to go from their residence to their place of work without being stopped by checkpoints, lack of transportation, and other hurdles. With the problem made clear, this website provides a possible solution.
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-The Solution this project is meant to implement (overview):
+The Solution this project is meant to provide
 
-With the problem made clear, this website provides itself as a possible solution. 
-Commuters can sign up and upload necessary documents that verify their identity and place of work. 
-Afterwards, they can apply for routes that are determined by the city they are applying in.
-After applying, city hall employees can choose to approve or disapprove their application based on the documents they provided.
+With the problem made clear, this website provides a possible solution. The website has three users: PasaHeroes, Admins, and Super Admins.
 
--------------------------------------------------------------------------------------------------------------------------------
+The website has three users:
+1. PasaHeroes
+2. Admins
+3. Super Admins
 
-The Solution this project is meant to implement (general implementation):
+PasaHeroes are the frontliners. They are the people who need transportation which may take the form of jeeps, buses, vans, etc. The path that these vehicles take are called routes. PasaHeroes upload documents into their account which validate their identity and their place of work so that the Admin can properly review their request to join the route. Once a PasaHero has joined a route, he or she can provide his or her preference for the time of departure of the vehicles that will transport them from their residence to their place of work. This will be processed by the Admin as the basis for route availability and capacity.
 
-The will be three types of users in the application: cities, employees, and commuters.
+Admins are the employees of a city or municipality. They have three main duties. The first one is to create and define route availabilities and capacities in their respective city or municipality based on the preference of the PasaHeroes who have joined that route. The second one is reading, assessing, and deciding on PasaHero requests to a route. Their basis being the documents that the PasaHeroes have uploaded. The last and most important duty is to provide the necessary transport vehicles for the PasaHeroes.
 
-Description:
-
-City
-  - super admins
-  - add one or more employees for their city account
-  
-Employee
-  - admins
-  - created my the city super admin
-  - create routes
-  - approve applicants
-  - view commuter documents
-  
- Commuter
-  - created by themselves
-  - applies for a route
-  - uploads their documents that prove their identity/work
+A Super Admin is the general manager of the whole transport system in his or her respective city or municipality. It is worth noting that there is only one Super Admin per city. Their main role is to make sure that the Admins are creating the proper routes, accepting the proper requests, and managing the transportation system. The Super Admin is given the power to activate and deactivate an Admin for the city or municipality that he or she is assigned to. 
 
 -------------------------------------------------------------------------------------------------------------------------------
-
-The Solution this project is meant to implement (actually implemented):
 
 Currently supported features of the application:
 
-For Cities admin:
-1) create and update announcements for the city	
-2) delete routes
-3) create, inactivate, reactivate employees 
+PasaHeroes:
+    Uploading, Viewing, Editing, and Deleting their document
+    Viewing all routes of a city with each route’s details - starting point, end point, time of departure, etc.
+    Join a a route and view the status of the request
+    View announcements made by the cities they applied for
+    Edit some information about himself or herself
+    Create and edit preferred time of departure for all routes they have joined
 
-For Employees: 
-1) view announcements for their commuters
-2) activate/inactivate routes (which employee made the change is visible)
-3) create routes (which employee made the change is visible)
-4) set and edit route trips and times (which employee made the changes is visible)
-5) approve, reject and return to pending the application of commuters (which employee made the decision is visible)
-6) view all commuter information and all their documents 
-7) view preferred times of all commuters for any given route (tabulated) 
+Admins: 
+    View announcement of the city
+    Create a route
+    Activate and deactivate routes
+    Create and edit route details such as time of departure, starting point, end point, capacity, etc.
+    Accept, Reject, and Return to Pending PasaHero requests
+    View PasaHero information as basis for PasaHero request decisions
+    View the total number of PasaHeroes per day in a given time slot for any route so that the Admin can analyse as basis for planning and managing transportation capacity and availability.
 
-For Commuters
-1) logging in, logging out, and signing up 
-2) uploading, editing, viewing, and deleting their documents
-3) viewing all routes of a city with each route's details such as starting point, end point, times, etc. 
-4) can apply for any route and see the status of their application 
-5) view announcements made by the cities they have applied for 
-6) edit information about self (ex: contact information) 
-7) create and edit preferred time of leaving per route
-
+Super Admin:
+    Create and manage Admins
+    Set city announcements
+    Delete routes
+    All powers of the admin (must create an admin user for self first)
 -------------------------------------------------------------------------------------------------------------------------------
 
 Future features/optimisations:
-
-1) make pdf documents visible from Firefox browsers
-2) optimised queries
-3) Proper ordering and display of time for employees/commuters
-4) Make button for "My routes" view for Commuter PDF-able
-5) Logo 
+  GPS/Map of the route
+  Messaging functionality between Admins and PasaHeroes
+  Captcha for bots
+  Email Verification for Sign Ups
+  Forgot password functionality for Admins and PasaHeroes
 
 -------------------------------------------------------------------------------------------------------------------------------
 
 Message to the reader
 
-This is the third website I am making so please excuse my code when it is suboptimal and spaghetti-like.
 Help in the form of optimisations or critiques would be much appreciated.
 The project is currently active on the following website:
 
-pasahero.benvillabroza.com
+mypasahero.com
