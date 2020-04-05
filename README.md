@@ -30,11 +30,17 @@ A Super Admin is the general manager of the whole transport system in his or her
 Currently supported features of the application:
 
 PasaHeroes:
+
     Uploading, Viewing, Editing, and Deleting their document
+    
     Viewing all routes of a city with each route’s details - starting point, end point, time of departure, etc.
+    
     Join a a route and view the status of the request
+    
     View announcements made by the cities they applied for
+    
     Edit some information about himself or herself
+    
     Create and edit preferred time of departure for all routes they have joined
 
 Admins: 
