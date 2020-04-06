@@ -55,7 +55,7 @@ def signup_user(request):
             commuter_group = Group.objects.get(name='commuter') 
             commuter_group.user_set.add(user)
             user.save()
-            return render(request, 'login.html', {'signup_message':"Sign Up Successful! You can login now!"})
+            return render(request, 'login.html', {'signup_message':"Sign Up Successful! You may now login!"})
         else:
             pass
     else:

@@ -1,36 +1,63 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}
 Login Page
 {% endblock %}
 
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock %}
 {% block body %}
-<div class="jumbotron">
-	<h1>PasaHeroes Login Here!</h1>
-	<form action="{% url 'login' %}" method="post">
-		{% csrf_token %}
-		<label for="username">
-			Username:
-		</label>
-		<input type="text" name="username" placeholder="">
+<div class="cntnr">
+	<div class="login_container">
+		<div id="login_form_info">
+			{% if signup_message %}
+			<div class="login_message_container signup">
+				{{ signup_message }}
+			</div>
+			{% elif message %}
 
-		<label for="password">
-			Password:
-		</label>
-		<input type="password" name="password" placeholder="">
+			<div class="login_message_container fail">
+				{{message}}
+			</div>
 
-		<input type="submit" name="" value="Login">
-		<br><br>
-		<h4>{{signup_message}}</h4>
-		{{message}}
-	</form>
-</div>
-<h4>Have no account yet? Sign up here!</h4>
-<div class="container">
-	<a href="{% url 'signup' %}">
-		<button type="button" class="btn btn-success">
-			Sign Up
-		</button>
-	</a>
+			{% endif %}
+			<h4>Login</h4>
+		</div>
+
+		<div class="border_line_horiz">
+			&nbsp;
+		</div>
+
+		<div class="login_form">
+			<form id='login_form' action='{% url "login" %}' method='POST'>
+				{% csrf_token %}
+				<label for="username">Username</label>
+				<input type="text" name="username">
+				<label for="password">Password</label>
+				<input id="password_input" type="password" name="password">
+
+				<button type="submit" class="btn btn-success" >
+					Login
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="border_line">
+		&nbsp;
+	</div>
+	<div class="signup_container">
+
+		<h4 class="sign_up_label">
+			Have no account ?
+		</h4>
+
+		<a href="{% url 'signup' %}" id="link_to_sign_up">
+			<button type='button' class="btn btn-success">
+				Sign Up
+			</button>
+		</a>
+	</div>
 </div>
 {% endblock %}
