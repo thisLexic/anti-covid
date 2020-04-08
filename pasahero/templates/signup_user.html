@@ -1,20 +1,54 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'signup_user.css' %}">
+{% endblock %}
 
 {% block title %}
 Sign up Page
 {% endblock %}
 
+
 {% block body %}
-<div class="jumbotron">
-	{% if registered %}
-		<h1>Thank you for registering!</h1>
-	{% else %}
-		<h1>Sign up Here</h1>
-		<h3>Fill out this form</h3>
-		<form method="post">
+	<div class="cntnr">
+		<h3>Sign Up!</h3>
+		<div id="horizontal_divider">
+		</div>
+		<form action="{% url 'signup' %}" method="POST">
 			{% csrf_token %}
-			{{ form.as_p }}	
-			<input type="submit" name="" value="Register">		
+			<div id="signup_container">
+
+				{{form.username.label}}
+				{{form.username}}
+				{{form.username.errors}}
+
+				{{form.password.label}}
+				{{form.password}}
+				<p>{{form.password.errors.0}}</p>
+
+				{{form.confirm_password.label}}
+				{{form.confirm_password}}
+				{% if form.password.errors|length <= 1 %}
+					{% for message in form.confirm_password.errors %}
+						<p>{{message}}</p>
+					{% endfor %}
+				{% endif %}
+
+
+
+
+				<!--{% for field in form %}
+
+					<span>{{field.label}}</span>
+					{{field}}
+					{{field.errors}}
+
+				{% endfor %} -->
+				
+				<button type="submit" class="btn btn-success">Sign Up</button>
+			</div>
+
 		</form>
-	{% endif %}
+	</div>
 {% endblock %}
