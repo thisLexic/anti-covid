@@ -1,5 +1,9 @@
+from re import search
+
 from django import forms
 from django.contrib.auth.models import User
+from django.core.validators import RegexValidator
+
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -14,6 +18,25 @@ class UserForm(forms.ModelForm):
         help_texts = {
             'username':None,
         }
+
+    def clean_username(self):
+        username = self.cleaned_data['username']
+
+        if User.objects.get(username=username) is not None:
+            raise forms.ValidationError('This username is already taken!', 'username_duplicate')
+
+        return username
+
+    def clean_password(self):
+        password = self.cleaned_data['password']
+
+        if len(password) < 6:
+            raise forms.ValidationError('Your password must be at least 6 characters long and contain at least one number and one letter of any case', 'password_length')
+        elif not search(r'^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$', password):
+            raise forms.ValidationError('Your password must contain at least one letter of any case and one number', 'password_strength')
+
+        return password
+
     def clean(self):
         cleaned_data = super(UserForm, self).clean()
         password = cleaned_data.get("password")
