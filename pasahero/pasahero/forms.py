@@ -2,6 +2,7 @@ from re import search
 
 from django import forms
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.validators import RegexValidator
 
 
@@ -22,10 +23,12 @@ class UserForm(forms.ModelForm):
     def clean_username(self):
         username = self.cleaned_data['username']
 
-        if User.objects.get(username=username) is not None:
-            raise forms.ValidationError('This username is already taken!', 'username_duplicate')
+        try:
+            User.objects.get(username=username)
+        except ObjectDoesNotExist:
+            return username
 
-        return username
+        raise forms.ValidationError("This username has already been taken", 'username_duplicate')
 
     def clean_password(self):
         password = self.cleaned_data['password']
