@@ -84,3 +84,16 @@
 #password_input {
     margin-bottom: 1em;
 }
+
+@media screen and (max-width: 980px) {
+    .cntnr {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .border_line {
+        height: 0.1em;
+        width: 92%;
+    }
+}
