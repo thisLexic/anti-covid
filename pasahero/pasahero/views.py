@@ -47,6 +47,7 @@ def login_user(request):
 
 def signup_user(request):
     registered = False
+    user_form = UserForm()
     if request.method == "POST":
         user_form = UserForm(data=request.POST)
         if user_form.is_valid():
@@ -56,14 +57,11 @@ def signup_user(request):
             commuter_group.user_set.add(user)
             user.save()
             return render(request, 'login.html', {'signup_message':"Sign Up Successful! You may now login!"})
-        else:
-            pass
-    else:
-        user_form = UserForm()
+
     return render(request, 'signup_user.html', {
-            'form':user_form,
-            'registered':registered,
-        })
+        'form':user_form,
+        'registered':registered,
+    })
 
 
 # >>>>>> This will be used during the testing period of the website

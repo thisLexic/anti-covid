@@ -1,0 +1,49 @@
+.cntnr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    border-radius: 6px;
+    padding: 1em;
+    min-width: 18em;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+h3 {
+    text-align: center;
+}
+
+#signup_form {
+    display: flex;
+    flex-direction: column;
+}
+
+#horizontal_divider {
+    height: 0.1em;
+    background: rgb(177, 176, 176);
+    width: 15em;
+}
+
+#signup_container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+button {
+    margin-top: 1em;
+}
+
+#signup_container p {
+    font-size: 0.75em;
+    margin-top: 0.3em;
+    background: #ff5171;
+    color: white;
+    padding: 0.2em;
+    border-radius: 2px;
+    margin-bottom: -0.2em;
+    word-wrap: break-word;
+    width: 17em;
+}
