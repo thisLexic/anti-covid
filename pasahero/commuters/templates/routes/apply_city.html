@@ -23,7 +23,12 @@ My Routes
 	data-cities-url="{% url 'commuters:ajax_load_cities' %}"
 	method="post">
 		{% csrf_token %}
-		{{ form.as_p }}
+    <h5>Province</h5>
+    {{ form.province_id }}
+    <br><br>
+    <h5>City</h5>
+    {{ form.city_id }}
+    <br><br>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 </div>

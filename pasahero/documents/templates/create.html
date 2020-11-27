@@ -13,8 +13,16 @@ Permitted Routes
     action="{% url 'documents:create' %}"
     method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
     <br>
+    <h5>Title</h5>
+    {{ form.title }}
+    <br><br>
+    <h5>Description</h5>
+    {{ form.description }}
+    <br><br>
+    <h5>Document</h5>
+    {{ form.document }}
+    <br><br>
 	<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 </div>
